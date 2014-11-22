@@ -1,4 +1,4 @@
-name := "ScalaTraining"
+name := "ScalaFP"
 
 version := "1.0"
 
