@@ -1,0 +1,14 @@
+<footer class="row footer">
+  <div class="col-md-6">
+    <a class="icon-link" *ngFor="let item of social" [href]="item.href" target="_blank">
+      <img class="icon" [src]="'../assets/' + item.icon"/>
+    </a>
+  </div>
+  <div class="col-md-6">
+    <a href="mailto:alonn24@gmail.com">
+      <img class="icon" src="../assets/mail-open-outline.png"/>
+      <span class="icon-link" >alonn24@gmail.com</span>
+    </a>
+  </div>
+  <div class="col-md-12">All rights reserved.</div>
+</footer>

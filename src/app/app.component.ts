@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Education, Experience } from './data/cv'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  sections = [{
+    title: 'Experience',
+    details: Experience
+  }, {
+    title: 'Education',
+    details: Education
+  }];
+
+  goto(selector) {
+    document.querySelector(selector).scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
 }

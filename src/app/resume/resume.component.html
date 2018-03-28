@@ -1,0 +1,19 @@
+<section id="about-me" class="about-me">
+  <div class="content">
+    <p>
+      Software Engineer, IDF's Captain officer, Mamram Graduate experienced in the industry including code
+      development, testing, integration and service management within an IT organization. B.A in Computer Science –
+      Systems & Applications with the Open University of Israel.
+    </p>
+    <p>
+      Accountable Software Engineer with unique techniques to solving problems.
+      Result driven, experienced and efficient team player. Possesses a solid tech skills and business sense.
+    </p>
+  </div>
+</section>
+<section *ngFor="let section of sections">
+  <div class="content">
+    <h2>{{section.title}}</h2>
+    <section-details [details]="section.details"></section-details>
+  </div>
+</section>

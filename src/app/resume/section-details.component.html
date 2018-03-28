@@ -1,0 +1,11 @@
+<div *ngFor="let item of details" role="tab">
+  <h3><a role="button" href="#" (click)="toggleBullets($event, item)">{{item.title}}</a></h3>
+  <div class="row" *ngIf="shouldShowBullets(item)">
+    <ul class="col-sm-12 col-md-9">
+      <li *ngFor="let bullet of item.content">{{bullet}}</li>
+    </ul>
+    <div *ngIf="item.image" class="col-sm-12 col-md-3 logo">
+      <img [src]="'../assets/' + item.image"/>
+    </div>
+  </div>
+</div>

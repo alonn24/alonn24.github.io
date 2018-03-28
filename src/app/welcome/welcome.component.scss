@@ -1,0 +1,19 @@
+aside {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+
+  font-weight: 700;
+  color: #FFF;
+  font-size: 48px;
+
+  @media (max-width: 600px) {
+    left: auto;
+  }
+}
+
+.btn {
+  font-size: 18px;
+  font-weight: 700;
+  border: 1px solid #FFF;
+}
