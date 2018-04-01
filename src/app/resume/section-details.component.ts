@@ -7,6 +7,15 @@ import { Component, Input } from '@angular/core';
 })
 export class SectionDetailsComponent {
   @Input() details;
+  displayedItem;
+
+  ngOnInit() {
+    this.displayedItem = this.details[0];
+  }
+
+  choose(item) {
+    this.displayedItem = item;
+  }
 
   toggleBullets($event, item) {
     $event.preventDefault();

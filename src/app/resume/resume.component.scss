@@ -4,12 +4,17 @@
 }
 
 section {
-  padding: 20px 0;
+  padding: 24px;
 
-  .content {
-    padding: 0 20px;
+  .thin-content {
     max-width: 980px;
     display: block;
     margin: auto;
+    opacity: 0;
+    transition: 1s opacity;
+
+    &.faded {
+      opacity: 1;
+    }
   }
 }

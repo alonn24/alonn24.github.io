@@ -13,3 +13,12 @@ h3 {
   font-size: 18px;
   font-weight: 200;
 }
+
+a {
+  text-decoration: none;
+
+  &, &:link, &:visited, &:focus, &:hover, &:active {
+    color: #007bff;
+    text-decoration: none;
+  }
+}
