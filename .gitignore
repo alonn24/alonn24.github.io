@@ -1,3 +1,5 @@
-.DS_Store
-project
+__pycache__
+google-cloud/export/
+keras/logs/
+tensorflow/logs/
 target
