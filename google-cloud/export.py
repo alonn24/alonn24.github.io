@@ -1,4 +1,5 @@
 import sys
+import shutil
 import tensorflow as tf
 from keras.layers import K
 sys.path.append('../keras/')
@@ -29,7 +30,6 @@ def export_to_tf(model, to):
     )
 
     model_builder.save()
-
-
+shutil.rmtree('./export', ignore_errors=True)
 model = load_model('../keras/data/trained_model.h5')
 export_to_tf(model, "export")

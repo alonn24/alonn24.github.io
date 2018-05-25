@@ -14,16 +14,12 @@ model = model_api.create(NUM_NODES)
 saver = tf.train.Saver()
 
 with tf.Session() as session:
-  model_api.train(session, model, df, "total_earnings")
-  save_path = saver.save(session, "logs/trained_model.ckpt")
-  print("Model saved: {}".format(save_path))
-
-with tf.Session() as session:
-  saver.restore(session, "logs/trained_model.ckpt")
+  saver.restore(session, "data/trained_model.ckpt")
   product = pd.read_csv("data/proposed_new_product.csv").values
-  prediction = session.run(model.prediction, feed_dict={model.X: product})
-  prediction = prediction[0][0]
-  prediction = prediction + adding
-  prediction = prediction / multiplying
-  print(prediction)
+  predictions = session.run(model.prediction, feed_dict={model.X: product})
+  for prediction in predictions:
+    prediction = prediction[0]
+    prediction = prediction + adding
+    prediction = prediction / multiplying
+    print(prediction)
 

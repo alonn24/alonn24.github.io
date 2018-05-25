@@ -1,5 +1,4 @@
+node_modules
 __pycache__
-google-cloud/export/
-keras/logs/
-tensorflow/logs/
+logs
 target
