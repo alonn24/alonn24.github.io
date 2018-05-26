@@ -23,23 +23,23 @@ def create(numOfNodes):
     X = tf.placeholder(tf.float32, shape=(None, 9))
 
   with tf.variable_scope('layer_1'):
-    weights = zero_weights("weights1", 9, numOfNodes)
-    biases = zero_biases("biases1", numOfNodes)
+    weights = zero_weights('weights1', 9, numOfNodes)
+    biases = zero_biases('biases1', numOfNodes)
     layer_1_output = tf.nn.relu(tf.matmul(X, weights) + biases)
 
   with tf.variable_scope('layer_2'):
-    weights = zero_weights("weights2", numOfNodes, 100)
-    biases = zero_biases("biases2", 100)
+    weights = zero_weights('weights2', numOfNodes, 100)
+    biases = zero_biases('biases2', 100)
     layer_2_output = tf.nn.relu(tf.matmul(layer_1_output, weights) + biases)
 
   with tf.variable_scope('layer_3'):
-    weights = zero_weights("weights3", 100, 50)
-    biases = zero_biases("biases3", 50)
+    weights = zero_weights('weights3', 100, 50)
+    biases = zero_biases('biases3', 50)
     layer_3_output = tf.nn.relu(tf.matmul(layer_2_output, weights) + biases)
 
   with tf.variable_scope('output'):
-    weights = zero_weights("weights4", 50, 1)
-    biases = zero_biases("biases4", 1)
+    weights = zero_weights('weights4', 50, 1)
+    biases = zero_biases('biases4', 1)
     prediction = tf.matmul(layer_3_output, weights) + biases  # predicted value
 
   # const/loss function - distance from the right prediction
@@ -63,14 +63,18 @@ def train(session, model, df, value):
   Y = df[[value]].values
   session.run(tf.global_variables_initializer())
 
-  training_writer = tf.summary.FileWriter("./logs/training", session.graph)
+  training_writer = tf.summary.FileWriter('./logs/training', session.graph)
 
-  for epoch in range(100):
+  for epoch in range(50):
     session.run(model.optimizer, feed_dict={model.X: X, model.Y: Y})
     training_cost, training_summary = session.run([model.cost, model.summary], feed_dict={model.X: X, model.Y: Y})
     training_writer.add_summary(training_summary, epoch)
-    print("Epoch: {} - Training Cost: {}".format(epoch, training_cost))
+    print('Epoch {}/50\n  loss: {:2f}'.format(epoch, training_cost))
 
   session.run(model.optimizer, feed_dict={model.X: X, model.Y: Y})
-  training_cost = session.run(model.cost, feed_dict={model.X: X, model.Y: Y})
-  print("Training complete with Training Cost: {}".format(training_cost))
+
+
+def error_rate(session, model, testing_data_df, value):
+  X = testing_data_df.drop(value, axis=1).values
+  Y = testing_data_df[[value]].values
+  return session.run(model.cost, feed_dict={model.X: X, model.Y: Y})

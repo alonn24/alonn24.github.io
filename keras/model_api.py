@@ -18,7 +18,7 @@ def train(model, df, value, logger):
   model.fit(X, Y, epochs=50, shuffle=True, verbose=2, callbacks=[logger])
 
 
-def error_rate(model, testing_data_df):
-  X_test = testing_data_df.drop('total_earnings', axis=1).values
-  Y_test = testing_data_df[['total_earnings']].values
+def error_rate(model, testing_data_df, value):
+  X_test = testing_data_df.drop(value, axis=1).values
+  Y_test = testing_data_df[[value]].values
   return model.evaluate(X_test, Y_test, verbose=0)

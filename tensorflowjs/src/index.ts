@@ -1,7 +1,6 @@
-import * as tf from '@tensorflow/tfjs'
-import { overrideConsole } from "./logger"
-
-overrideConsole('#log')
+import * as tf from '@tensorflow/tfjs';
+import { overrideConsole } from "./logger";
+import initWebcam from "./webcam/init-webcam";
 
 async function load(url) {
   const res = await fetch(url);
@@ -20,4 +19,20 @@ async function predict() {
   }
 }
 
+const webcamElement = document.getElementById('webcam') as HTMLVideoElement;
+async function predictWebcam() {
+  initWebcam(webcamElement);
+  const model = await tf.loadModel('data/resnet50_model/model.json');
+  // const example = tf.fromPixels(webcamElement);  // for example
+  const canvas = document.createElement('canvas');
+  canvas.width = webcamElement.width;
+  canvas.height = webcamElement.height;
+  canvas.getContext('2d').drawImage(webcamElement, 0, 0, webcamElement.width, webcamElement.height);
+  const example = tf.fromPixels(canvas);
+  const prediction = model.predict(example);
+  console.log(prediction);
+}
+
+overrideConsole('#log');
 (window as any).predict = predict;
+(window as any).predictWebcam = predictWebcam;

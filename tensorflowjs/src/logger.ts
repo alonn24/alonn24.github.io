@@ -1,11 +1,7 @@
 export function overrideConsole(container) {
   const log = document.querySelector(`${container}`)
-  const form = document.createElement('form')
-  const input = document.createElement('input')
-  input.style.width = '100%'
-  input.autofocus = true
-  log.appendChild(form)
-  form.appendChild(input)
+  const form = document.getElementById('console') as HTMLFormElement
+  const input = document.getElementById('console-input') as HTMLInputElement
 
   form.addEventListener('submit', function(event) {
     event.preventDefault();
