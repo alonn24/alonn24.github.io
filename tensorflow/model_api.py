@@ -18,17 +18,17 @@ class TFModel:
     self.summary = summary
 
 
-def create(numOfNodes):
+def create():
   with tf.variable_scope('input'):
     X = tf.placeholder(tf.float32, shape=(None, 9))
 
   with tf.variable_scope('layer_1'):
-    weights = zero_weights('weights1', 9, numOfNodes)
-    biases = zero_biases('biases1', numOfNodes)
+    weights = zero_weights('weights1', 9, 50)
+    biases = zero_biases('biases1', 50)
     layer_1_output = tf.nn.relu(tf.matmul(X, weights) + biases)
 
   with tf.variable_scope('layer_2'):
-    weights = zero_weights('weights2', numOfNodes, 100)
+    weights = zero_weights('weights2', 50, 100)
     biases = zero_biases('biases2', 100)
     layer_2_output = tf.nn.relu(tf.matmul(layer_1_output, weights) + biases)
 
@@ -70,8 +70,6 @@ def train(session, model, df, value):
     training_cost, training_summary = session.run([model.cost, model.summary], feed_dict={model.X: X, model.Y: Y})
     training_writer.add_summary(training_summary, epoch)
     print('Epoch {}/50\n  loss: {:2f}'.format(epoch, training_cost))
-
-  session.run(model.optimizer, feed_dict={model.X: X, model.Y: Y})
 
 
 def error_rate(session, model, testing_data_df, value):

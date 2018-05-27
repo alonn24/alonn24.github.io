@@ -6,15 +6,13 @@ import model_api
 sys.path.append('../utils/')
 import input_api
 
-NUM_NODES = 50
-RUN_NAME = '{} nodes'.format(NUM_NODES)
 logger = keras.callbacks.TensorBoard(  # Create a TensorBoard logger
-  log_dir='logs/{}'.format(RUN_NAME),
+  log_dir='logs/50',
   write_graph=True,
   histogram_freq=0  # 5 without tensorBoard
 )
 
-model = model_api.create(NUM_NODES)
+model = model_api.create()
 training_data_df, multiplying, adding = input_api.read_df('data/sales_data_training.csv', True)
 model_api.train(model, training_data_df, 'total_earnings', logger)
 

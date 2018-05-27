@@ -6,11 +6,8 @@ import model_api
 sys.path.append('../utils/')
 import input_api
 
-NUM_NODES = 50
-RUN_NAME = '{} nodes'.format(NUM_NODES)
-
 df, multiplying, adding = input_api.read_df('data/sales_data_training.csv', True)
-model = model_api.create(NUM_NODES)
+model = model_api.create()
 saver = tf.train.Saver()
 
 with tf.Session() as session:

@@ -2,9 +2,9 @@ from keras.models import Sequential
 from keras.layers import Dense
 
 
-def create(numOfNodes):
+def create():
   model = Sequential()
-  model.add(Dense(numOfNodes, input_dim=9, activation='relu', name='layer_1'))
+  model.add(Dense(50, input_dim=9, activation='relu', name='layer_1'))
   model.add(Dense(100, activation='relu', name='layer_2'))
   model.add(Dense(50, activation='relu', name='layer_3'))
   model.add(Dense(1, activation='linear', name='output_layer'))
