@@ -7,20 +7,17 @@ import { Component, Input } from '@angular/core';
 })
 export class SectionDetailsComponent {
   @Input() details;
-  displayedItem;
+  selectedDetail;
 
-  ngOnInit() {
-    this.displayedItem = this.details[0];
+  mouseleave() {
+    this.selectedDetail = null;
   }
 
-  choose(item) {
-    this.displayedItem = item;
+  mouseenter(item) {
+    this.selectedDetail = item;
   }
 
-  toggleBullets($event, item) {
-    $event.preventDefault();
-    item.show = !item.show;
+  elevation(item) {
+    return item == this.selectedDetail ? 5 : 1;
   }
-
-  shouldShowBullets = item => item.show === true;
 }

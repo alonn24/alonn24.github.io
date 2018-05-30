@@ -1,61 +1,7 @@
-//h3 {
-//  cursor: pointer;
-//}
-
-//.row {
-//  padding: 0 20px;
-//  max-height: 0;
-//  overflow: hidden;
-//
-//  &.expand {
-//    max-height: 999px;
-//    transition: 1s max-height;
-//  }
-//}
-
-$arrow-size: 6px;
-.timeline {
-  position: relative;
-  width: 100%;
-  border-top: 1px solid #000;
-  display: flex;
-
-  &:after {
-    content: '';
-    border-top: $arrow-size solid transparent;
-    border-bottom: $arrow-size solid transparent;
-    border-left: $arrow-size solid #000;
-    position: absolute;
-    right: 0;
-    top: -$arrow-size;
-  }
-}
-
-.event {
-  position: relative;
-  cursor: pointer;
-  &:before {
-    content: '';
-    border: 1px solid #000;
-    position: absolute;
-    left: 50%;
-    top: 0;
-  }
-}
-
-.slideshow {
-  margin: auto;
-  white-space: nowrap;
-}
-
-.details {
-  visibility: hidden;
-  width: 0;
-  display: inline-block;
-  &.active {
-    visibility: visible;
-    width: auto;
-  }
+wired-card {
+  display: block;
+  margin-top: 24px;
+  padding: 12px;
 }
 
 .logo {
