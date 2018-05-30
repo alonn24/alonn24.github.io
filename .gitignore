@@ -1,5 +1,5 @@
 node_modules
 __pycache__
-logs
+/ml-tutorial/*/logs
 target
-tensorflowjs/build/
+*/tensorflowjs/build/
