@@ -10,9 +10,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@webcomponents/webcomponentsjs": "^2.0.0"
+    "@polymer/polymer": "^3.0.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "mobx": "^4.3.0",
+    "mobx-react": "^5.1.2",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
   },
   "devDependencies": {
+    "@types/react": "^16.3.16",
+    "@types/react-dom": "^16.0.5",
     "copy-webpack-plugin": "^4.5.1",
     "html-webpack-plugin": "^3.2.0",
     "ts-loader": "^4.3.0",

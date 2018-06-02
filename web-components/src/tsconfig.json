@@ -8,6 +8,8 @@
     "strict": false,
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "../dist"
+    "outDir": "../dist",
+    "experimentalDecorators": true,
+    "jsx": "react"
   }
 }

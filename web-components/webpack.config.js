@@ -6,7 +6,7 @@ module.exports = {
   mode: 'development',
   context: path.join(__dirname, 'src'),
   entry: {
-    app: './index.ts'
+    app: './index.tsx'
   },
   output: {
     path: path.join(__dirname, 'build'),
@@ -22,6 +22,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new CopyWebpackPlugin([{
+      from: '**/*.html',
+      to: './'
+    }]),
     new HtmlWebpackPlugin({
       template: 'index.html'
     })
