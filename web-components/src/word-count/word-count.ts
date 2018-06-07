@@ -45,7 +45,7 @@ class WordCount extends HTMLElement {
   private logToComponent(text) {
     const span = document.createElement('div');
     span.innerHTML = text;
-    const log = this.shadowRoot.querySelector('.log') as HTMLElement
+    const log = this.shadowRoot.querySelector('.log') as HTMLElement;
     log.appendChild(span);
   }
 }

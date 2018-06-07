@@ -1,5 +1,7 @@
+import '@webcomponents/webcomponentsjs/webcomponents-loader';
+import './polymer/polymer-word-count'
+
 import './word-count/word-count';
-import './polymer/polymer-word-count';
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
 
@@ -10,6 +12,7 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       'word-count': any
+      'polymer-word-count': any
     }
   }
 }
@@ -33,6 +36,10 @@ class ReactWordCount extends React.Component<any, any> {
           <span slot='title'>Word Count:</span>
           Light DOM Content
         </word-count>
+        <polymer-word-count text={ this.props.appState.wordCount }>
+          <span slot='title'>Polymer Word Count:</span>
+          Light DOM Content
+        </polymer-word-count>
       </div>
     );
   }

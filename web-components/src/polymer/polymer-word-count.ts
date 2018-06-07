@@ -1,42 +1,55 @@
-import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-import {afterNextRender} from '@polymer/polymer/lib/utils/render-status.js';
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
 
 export class PolymerWordCount extends PolymerElement {
   constructor() {
     super();
-
-    afterNextRender(this, function() {
-      console.log('PolymerWordCount: afterNextRender');
-    });
   }
 
-  static get template() {
-    return html`<span>PolymerWordCount!: </span>`;
+  static get is() {
+    return 'polymer-word-count';
   }
 
   static get properties() {
     return {
       text: {
-        type: String
+        type: String,
+        observer: '_textChanged'
+      },
+      textCount: {
+        type: Number,
+        computed: '_textCount(text)'
       }
-    };
+    }
   }
 
-  static get observers() {
-    return [ `_textChanged(text.*)` ];
+  _textCount(text) {
+    return text.trim().split(' ').length;
   }
 
-  _textChanged(text) {
-    console.log(`PolymerWordCount: _textChanged`, text);
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
+  _textChanged(newValue, oldValue) {
+    this.logToComponent(`attributeChangedCallback: ${name} from "${oldValue}" to "${newValue}"`);
   }
 
   ready() {
     super.ready();
+    this.logToComponent('ready');
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.logToComponent('connectedCallback');
+  }
+
+  get me():HTMLElement {
+    return <any>this;
+  }
+
+  private logToComponent(text) {
+    const span = document.createElement('div');
+    span.innerHTML = text;
+    const log = this.me.shadowRoot.querySelector('.log') as HTMLElement;
+    log.appendChild(span);
   }
 }
 
-customElements.define('polymer-word-count', PolymerWordCount);
+customElements.define(PolymerWordCount.is, PolymerWordCount);
