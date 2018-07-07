@@ -2,15 +2,15 @@ var path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   mode: 'development',
   context: path.join(__dirname, 'src'),
   entry: {
-    app: './index.ts'
+    app: './client/index.ts'
   },
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, 'build', 'public'),
     filename: '[name].bundle.js'
   },
   devtool: 'source-map',
@@ -51,12 +51,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new CopyWebpackPlugin([{
-      from: path.join(__dirname, 'src', 'data'),
-      to: 'data'
-    }]),
+    new CopyWebpackPlugin(['./data/**/*.*', {from: './server/**/*.*', to:'../'}]),
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      template: 'client/index.html'
     }),
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
