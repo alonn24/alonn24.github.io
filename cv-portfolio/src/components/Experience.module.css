@@ -1,0 +1,11 @@
+.experience {
+  padding: 1em;
+}
+
+.descriptionList {
+  margin-left: 1em;
+}
+
+.descriptionList li {
+  list-style-type: none;
+}

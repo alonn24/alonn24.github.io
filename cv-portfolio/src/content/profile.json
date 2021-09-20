@@ -1,0 +1,17 @@
+{
+  "avatarUrl": "/images/profile.webp",
+  "firstName": "Alon",
+  "lastName": "Yehezkel",
+  "phone": "058-6622004",
+  "email": "alonn24@gmail.com",
+  "address": "Beer Sheva",
+  "role": "Software Engineer",
+  "aboutMe": "Software Developer, IDF's Captain officer, Mamram Graduate experienced in the industry including code development, testing, integration and service management within an IT organization. B.A in Computer Science – Systems & Applications with the Open University of Israel.",
+  "skills": {
+    "Fullstack Web Developer": 90,
+    "Team Work": 90,
+    "UI Design": 90,
+    "Performance & Security Awareness": 90,
+    "Clean Code": 90
+  }
+}
