@@ -1,25 +1,36 @@
-import { HStack, VStack } from "@chakra-ui/react";
-import AboutMe from "./AboutMe";
-import Education from "./Education";
-import Experience from "./Experience";
-import Languages from "./Languages";
-import Profile from "./Profile";
-import Skills from "./Skills";
+import { Button, Box, VStack } from "@chakra-ui/react";
+import { useColorModeValue } from '@chakra-ui/color-mode';
+import { useColorMode } from "@chakra-ui/color-mode";
+import Section from './layout/Section';
+import AboutMe from "./sections/AboutMe";
+import Education from "./sections/Education";
+import Experience from "./sections/Experience";
+import Languages from "./sections/Languages";
+import Profile from "./sections/Profile";
 
 function CVPage() {
-  return <><HStack padding="1em" templateColumns="1fr 150px 1fr">
-    <VStack flex="1 1 0" alignSelf="flex-start" alignItems="stretch">
-      <AboutMe />
-      <Education />
-    </VStack>
-    <Profile alignSelf="flex-start" height="100%" minHeight="calc(100vh - 2em)" />
-    <VStack flex="1 1 0" alignSelf="flex-end" alignItems="stretch">
-      <Skills />
+  const value = useColorModeValue('black', 'white')
+  const { colorMode, toggleColorMode } = useColorMode();
+  return <VStack padding="1em" sx={{ "--contact-border-color": value }}>
+    <Button onClick={toggleColorMode}>
+      Toggle {colorMode === "light" ? "Dark" : "Light"}
+    </Button>
+    <Box mt="3rem" display={{ md: 'flex' }}>
+      <Profile flex="1" mb={{ base:'3rem', md: "1rem" }} />
+      <Section flex="2" title="About me">
+        <AboutMe />
+      </Section>
+    </Box>
+    <VStack alignItems="stretch">
+      <Section title="Education">
+        <Education />
+      </Section>
+      <Section title="Experience">
+        <Experience />
+      </Section>
       <Languages />
     </VStack>
-  </HStack>
-    <Experience />
-  </>
+  </VStack>
 }
 
 export default CVPage;

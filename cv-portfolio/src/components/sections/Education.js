@@ -1,5 +1,5 @@
-import education from '../content/education.json';
-import Timeline from './layout/Timeline';
+import education from '../../content/education.json';
+import Timeline from '../layout/Timeline';
 
 function ItemComponent({ item }) {
   return <>
@@ -11,7 +11,7 @@ function ItemComponent({ item }) {
 
 function Education() {
   const { timeline } = education;
-  return <Timeline items={timeline} ItemComponent={ItemComponent} />
+  return <Timeline items={timeline} ItemComponent={ItemComponent} />;
 };
 
 export default Education;

@@ -1,6 +1,6 @@
 import css from './Experience.module.css'
-import experience from '../content/experience.json';
-import Timeline from './layout/Timeline';
+import experience from '../../content/experience.json';
+import Timeline from '../layout/Timeline';
 
 function Description({ description }) {
   if (typeof description === 'string') {
@@ -25,9 +25,7 @@ function ItemComponent({ item }) {
 
 function Experience() {
   const { timeline } = experience;
-  return <div className={css.experience}>
-    <Timeline items={timeline} ItemComponent={ItemComponent} />
-  </div>;
+  return <Timeline items={timeline} ItemComponent={ItemComponent} />;
 }
 
 export default Experience;

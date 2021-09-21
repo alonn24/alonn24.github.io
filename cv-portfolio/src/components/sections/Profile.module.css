@@ -1,0 +1,59 @@
+.avatar {
+  padding: 1em;
+  position: relative;
+}
+
+.overlay {
+  opacity: 0.1;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  30% {
+    top: -0.5rem;
+    bottom: -0.5rem;
+    left: -0.5rem;
+    right: -0.5rem;
+  }
+  100% {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.name {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  opacity: 0.5;
+}
+
+.role {
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.contact::before, .contact::after {
+  content: '';
+  display: block;
+  margin: auto;
+  opacity: 0.1;
+  border-top: 1px solid var(--contact-border-color);
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+}

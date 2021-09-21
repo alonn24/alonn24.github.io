@@ -2,8 +2,11 @@
   "name": "cv-portfolio",
   "version": "0.1.0",
   "private": true,
-  "engines" : { "node" : ">=14.17" },
+  "engines": {
+    "node": ">=14.17"
+  },
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.15",
     "@chakra-ui/react": "^1.6.7",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
