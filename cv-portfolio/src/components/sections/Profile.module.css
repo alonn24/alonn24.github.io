@@ -48,11 +48,11 @@
   white-space: nowrap;
 }
 
-.contact::before, .contact::after {
+.contact::before {
   content: '';
   display: block;
   margin: auto;
   border-top: 1px solid var(--contact-border-color);
   margin-top: 0.5rem;
-  padding-top: 0.5rem;
+  padding-top: 1rem;
 }

@@ -1,28 +1,39 @@
-import css from './Experience.module.css'
+import { VscTerminal } from "react-icons/vsc";
+import { Box, Text, UnorderedList, List, ListItem, ListIcon } from '@chakra-ui/react';
+import CustomBadge from '../layout/CustomBadge';
 import experience from '../../content/experience.json';
 import ZigZagList from '../layout/ZigZagList';
-import { Box, Text } from '@chakra-ui/layout';
 
 function Description({ description }) {
   if (typeof description === 'string') {
-    return description;
+    return <Text fontSize="xs" >{description}</Text>;
   }
   if (Array.isArray(description)) {
-    return <ul className={css.descriptionList}>
-      {description.map(x => <li>
+    return <UnorderedList>
+      {description.map(x => <ListItem>
         <Description description={x} />
-      </li>)}
-    </ul>
+      </ListItem>)}
+    </UnorderedList>
   }
   return null;
 }
 
 function ItemComponent({ item }) {
   return <Box>
-    <Text fontWeight="extrabold" fontSize="lg">{[item.company, item.title].filter(Boolean).join(' - ')}</Text>
+    <Text fontWeight="extrabold" fontSize={{ base: "lg", md: "xl" }}>{[item.company, item.title].filter(Boolean).join(' - ')}</Text>
     <Text as="sup">{[item.start, item.end].filter(Boolean).join(' - ')}</Text>
     {item.description && <Description description={item.description} />}
-    {/* {item.timeline && <ZigZagList items={item.timeline} ItemComponent={ItemComponent} />} */}
+    <List>
+      {item.timeline.map(x => (<ListItem display="flex" mb="1rem">
+        <ListIcon as={VscTerminal} mt="0.5em" />
+        <Box>
+          <Text fontWeight="hairline" fontSize={{ base: "lg" }}>{x.title}</Text>
+          <Text as="sup">{[x.start, x.end].filter(Boolean).join(' - ')}</Text>
+          <Box>{(x.highlights || []).map(b => <CustomBadge me="0.5rem" mb="0.5em" secondary>{b}</CustomBadge>)}</Box>
+          <Description description={x.description} />
+        </Box>
+      </ListItem>))}
+    </List>
   </Box>;
 }
 

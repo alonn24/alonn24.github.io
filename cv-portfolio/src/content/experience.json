@@ -16,34 +16,79 @@
   },
   "timeline": [
     {
-      "title": "Software Engineer",
       "company": "Bookaway",
       "start": "Jul 2019",
-      "description": ""
+      "end": "present",
+      "timeline": [
+        {
+          "title": "Software Engineer",
+          "start": "Jul 2019",
+          "highlights": ["Small Company", "All Around", "Cloud"],
+          "description": [
+            "Developing features end to end, services management, backend and front end",
+            "Fully functioned eCommerce flow from search, booking, cart management, user account, emails",
+            "Inventory management using catalog service",
+            "Managing k8s services in GCP using managed MongoDB, Elastic Search DB, Redis, PubSub, BigQuery, etc.",
+            "Performance and security awareness using various technologies"
+          ]
+        }
+      ]
     },
     {
-      "title": "Software Engineer",
       "company": "Wix.com",
       "start": "Jan 2014",
       "end": "Jun 2019",
-      "description": [
-        "Front-end developer using the newest technologies",
-        [
-          "Using the Angular framework with 3rd party libraries to build rich and dynamic UI.",
-          "Using development environment technologies and build system tools such as The Angular framework, Grunt, Bower, Sass/Compass etc.",
-          "Developing TDD with supportive technologies such as Karma, Jasmine, Protractor etc.",
-          "Source control using Git & Github, collaborate with the open source community.",
-          "Real user monitor using NewRelic and implementing a supportive library."
-        ]
+      "timeline": [
+        {
+          "company": "Wix Stores",
+          "title": "Front End Developer",
+          "start": "Jan 2014",
+          "end": "2016",
+          "highlights": ["Front-End", "Clean Code", "eCommerce"],
+          "description": [
+            "Ecommerce funnel front end development using the Angular framework with 3rd party libraries to build rich and dynamic UI.",
+            "Write and maintain development environment technologies and build system tools such as Grunt, Bower, Sass/Compass etc.",
+            "Writing clean code, TDD with supportive technologies such as Karma, Jasmine, Protractor etc.",
+            "Source control using Git & Github, collaborate with the open source community.",
+            "Performance and lag free UX monitoring various technologies such as New Relic, Raygun.io, TrackJs, etc."
+          ]
+        },
+        {
+          "company": "Wix ADI",
+          "title": "Front End Tech Lead",
+          "start": "2016",
+          "end": "2018",
+          "highlights": ["Clean Code", "Tech Lead"],
+          "description": [
+            "Generating dynamic pages using G&T algorythem and rendering with the Wix view renderer",
+            "Clean code methodolgies, SOLID, TDD, KISS, YAGNI, DRY and more"
+          ]
+        },
+        {
+          "company": "Wix CRM",
+          "title": "Site Members Team Lead",
+          "start": "2018",
+          "end": "Jun 2019",
+          "highlights": ["Team Lead", "Cross Company Collaboration"],
+          "description": [
+            "Cross company team management with collaboration challenges",
+            "Developing multi-environment complementary features to manage members in Wix sites in Wix BO, site components and wix code module",
+            "Authorization and authentication features to manage users access to resources on the site using role based system",
+            "API exposure (REST, RPC) for consumers with auto generated documentation"
+          ]
+        }
       ]
     },
     {
       "company": "Mamram",
+      "start": "Mar 2012",
+      "end": "Jan 2014",
       "timeline": [
         {
           "title": "BSM (Business Service Management) Design Team Leader",
           "start": "Mar 2012",
           "end": "Jan 2014",
+          "highlights": ["Solution Design", "DC Monitoring"],
           "description": [
             "Planning and implementing HP's BSM solution (version 9.2) in an IT organization.",
             "Understanding DC's systems architecture and implementation within the BSM Platform.",
@@ -55,35 +100,31 @@
           "title": "CM Team Leader",
           "start": "Nov 2010",
           "end": "Mar 2012",
+          "highlights": ["Team Lead", "Release Management"],
           "description": [
-            "Hands on CM Team member, Leading up to 4 team members.",
-            "Integration with related organizations and teams managing the current workflow and future strategies of development."
+            "Hands on CM Team leader, Leading up to 4 team members.",
+            "Integration with related organizations and teams managing the current workflow and future strategies of development.",
+            "Implementing separate development environment and versioning using source control branches and released.",
+            "Implementing Source Control with Rational ClearCase (v6.0 up to v7.0), ClearCase RCC, integration with Visual Studio (2003 up to 2010) and Rational Application Developer (v7.0 up to v9.0).",
+            "COM+ application development including automated building system (in various environment) using VB6.0, Ant building and Microsoft MSBuild and Scripting.",
+            "Development environment maintenance including public repository integration.",
+            "Automation of critical processes such as auto-generation of release components and parallel auto-deploy to various environments using batch, Ant build, MSBuild, WSAdmin, Python.",
+            "Middleware maintenance, experience in IIS (6.0/7.0) and WebSphere (7.0/8.1)."
           ]
         },
         {
-          "title": "Software Developer & CM Team Member",
+          "title": "Software Developer",
           "start": "May 2006",
           "end": "Mar 2012",
+          "highlights": ["Configuration Management", "Full Stack"],
           "description": [
             "Mamram Certificate of excellence in 2010.",
-            "Software Developer",
-            [
-              "Front-end Development using ASP.NET (v1.0 up to v3.5), C# (v1.0 up to v3.0), JavaScript, AJAX, JQuery, SVG and Dynamic Drawing. Touch in Silverlight, HTML5 & CSS3.",
-              "Integration with 3rd party software: Infragistics NetAdvantage, KVM, Xstream.",
-              "Lead security development team (XSS, Script/SQL Injection).",
-              "Lead performance analysis team using memory dumps investigation, load tests using HP's Load Runner and Diagnostics (VUGen Scripting).",
-              "Back-end development using JAVA (v6.0 up to v7.0), Hibernate (v3.1).",
-              "Enterprise system development using SOA architecture."
-            ],
-            "CM Team Member",
-            [
-              "Implementing separate development environment and versioning using source control branches and released.",
-              "Implementing Source Control with Rational ClearCase (v6.0 up to v7.0), ClearCase RCC, integration with Visual Studio (2003 up to 2010) and Rational Application Developer (v7.0 up to v9.0).",
-              "COM+ application development including automated building system (in various environment) using VB6.0, Ant building and Microsoft MSBuild and Scripting.",
-              "Development environment maintenance including public repository integration.",
-              "Automation of critical processes such as auto-generation of release components and parallel auto-deploy to various environments using batch, Ant build, MSBuild, WSAdmin, Python.",
-              "Middleware maintenance, experience in IIS (6.0/7.0) and WebSphere (7.0/8.1)."
-            ]
+            "Front-end Development using ASP.NET (v1.0 up to v3.5), C# (v1.0 up to v3.0), JavaScript, AJAX, JQuery, SVG and Dynamic Drawing. Touch in Silverlight, HTML5 & CSS3.",
+            "Integration with 3rd party software: Infragistics NetAdvantage, KVM, Xstream.",
+            "Lead security development team (XSS, Script/SQL Injection).",
+            "Lead performance analysis team using memory dumps investigation, load tests using HP's Load Runner and Diagnostics (VUGen Scripting).",
+            "Back-end development using JAVA (v6.0 up to v7.0), Hibernate (v3.1).",
+            "Enterprise system development using SOA architecture."
           ]
         }
       ]

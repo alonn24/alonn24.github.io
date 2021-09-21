@@ -1,5 +1,5 @@
 import css from './Profile.module.css';
-import { PhoneIcon, EmailIcon } from '@chakra-ui/icons'
+import { VscCallOutgoing, VscMail } from "react-icons/vsc";
 import { Box, Avatar, VStack, Link } from '@chakra-ui/react';
 
 import profile from '../../content/profile.json';
@@ -13,8 +13,8 @@ function Profile(props) {
     <div className={css.name}>{profile.firstName}<br />{profile.lastName}</div>
     <div className={css.role}>{profile.role}</div>
     <Box className={css.contact}>
-      <Link px="1rem" href={`tel:${profile.phone}`}><PhoneIcon /></Link>
-      <Link px="1rem" href={`mailto:${profile.email}`}><EmailIcon /></Link>
+      <Link display="inline-block" px="1rem" href={`tel:${profile.phone}`}><VscCallOutgoing /></Link>
+      <Link display="inline-block" px="1rem" href={`mailto:${profile.email}`}><VscMail /></Link>
     </Box>
   </VStack>;
 }
