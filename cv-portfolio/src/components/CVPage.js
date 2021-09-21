@@ -5,31 +5,30 @@ import Section from './layout/Section';
 import AboutMe from "./sections/AboutMe";
 import Education from "./sections/Education";
 import Experience from "./sections/Experience";
-import Languages from "./sections/Languages";
 import Profile from "./sections/Profile";
 
 function CVPage() {
-  const value = useColorModeValue('black', 'white')
+  const value = useColorModeValue('colors.green.500', 'colors.green.300')
   const { colorMode, toggleColorMode } = useColorMode();
-  return <VStack padding="1em" sx={{ "--contact-border-color": value }}>
+  return <VStack padding="1em" alignItems="start" sx={{ "--contact-border-color": value }}>
     <Button onClick={toggleColorMode}>
       Toggle {colorMode === "light" ? "Dark" : "Light"}
     </Button>
-    <Box mt="3rem" display={{ md: 'flex' }}>
-      <Profile flex="1" mb={{ base:'3rem', md: "1rem" }} />
-      <Section flex="2" title="About me">
+    <Box mt="3rem" display={{ md: 'flex' }} >
+      <Profile flex="1" />
+      <Section flex="2" title="About me" mt={{ base: '2rem', md: "1rem" }}>
         <AboutMe />
       </Section>
     </Box>
-    <VStack alignItems="stretch">
-      <Section title="Education">
-        <Education />
-      </Section>
-      <Section title="Experience">
+    <Box>
+      <Section title="Experience" mt="2rem">
         <Experience />
       </Section>
-      <Languages />
-    </VStack>
+    </Box><Box>
+      <Section title="Education" mt="2rem">
+        <Education />
+      </Section>
+    </Box>
   </VStack>
 }
 

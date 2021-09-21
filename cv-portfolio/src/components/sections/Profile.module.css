@@ -52,7 +52,6 @@
   content: '';
   display: block;
   margin: auto;
-  opacity: 0.1;
   border-top: 1px solid var(--contact-border-color);
   margin-top: 0.5rem;
   padding-top: 0.5rem;
