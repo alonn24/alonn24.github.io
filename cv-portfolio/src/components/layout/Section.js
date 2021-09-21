@@ -1,12 +1,14 @@
 import css from './Section.module.css'
-import { VStack, Text, Box } from '@chakra-ui/react';
+import { VStack, Text, Box, useMediaQuery } from '@chakra-ui/react';
 function Section(props) {
+  const [isPrint] = useMediaQuery('print');
   const { title, ...restProps } = props;
-  return <VStack alignItems="stretch" color="primary.100" {...restProps}>
+  return <VStack p="1rem" alignItems="stretch" color="primary.100" {...restProps}>
     <Text pl={{ base: '1rem', sm: '0' }}
       pr={{ base: '0', sm: '1rem' }}
-      fontWeight="bold"
-      alignSelf={{ base: 'end', sm: 'start' }}
+      fontWeight={isPrint ? 'extrabold' : "hairline"}
+      fontSize="xl"
+      alignSelf={{ base: isPrint ? 'start' : 'end', sm: 'start' }}
       className={css.title}>
       {title}
     </Text>

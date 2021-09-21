@@ -4,8 +4,8 @@ import { mode } from "@chakra-ui/theme-tools"
 const components = {
   CustomBadge: {
     baseStyle: ({ colorMode }) => ({
-      bg: colorMode === "dark" ? "primary.300" : "primary.500",
-      color: colorMode === "dark" ? "gray.800" : "white",
+      bg: colorMode === "dark" ? "primary.300" : "primary.300",
+      color: colorMode === "dark" ? "gray.800" : "gray.800",
       textTransform: "uppercase",
       fontWeight: "semibold",
       padding: "4px 8px",

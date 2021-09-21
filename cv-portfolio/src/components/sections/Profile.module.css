@@ -36,11 +36,11 @@
 }
 
 .name {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 0.2rem;
-  opacity: 0.5;
+  /* text-align: center; */
+  /* text-transform: uppercase; */
+  /* font-weight: bold; */
+  /* letter-spacing: 0.2rem; */
+  /* opacity: 0.5; */
 }
 
 .role {

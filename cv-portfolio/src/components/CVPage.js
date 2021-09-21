@@ -1,6 +1,6 @@
-import { Button, Box, VStack } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 import { useColorModeValue } from '@chakra-ui/color-mode';
-import { useColorMode } from "@chakra-ui/color-mode";
+import Toolbar from './sections/Toolbar';
 import Section from './layout/Section';
 import AboutMe from "./sections/AboutMe";
 import Education from "./sections/Education";
@@ -8,29 +8,31 @@ import Experience from "./sections/Experience";
 import Profile from "./sections/Profile";
 
 function CVPage() {
-  const value = useColorModeValue('colors.primary.500', 'colors.primary.300');
-  const inverseColor = useColorModeValue('white', 'colors.gray.800');
-  const { colorMode, toggleColorMode } = useColorMode();
+  const value = useColorModeValue('colors.primary.300', 'colors.primary.300');
+  const inverseColor = useColorModeValue('colors.gray.800', 'colors.gray.800');
+  const gardiend = useColorModeValue(
+    "linear(to-r, secondary.300, primary.300)",
+    "linear(to-r, secondary.500, primary.500)"
+  );
+  
   const sx = { "--contact-border-color": value, "--text-color-inverse": inverseColor };
-  return <VStack padding="1em" alignItems="stretch" sx={sx}>
-    <Button onClick={toggleColorMode}>
-      Toggle {colorMode === "light" ? "Dark" : "Light"}
-    </Button>
-    <Box mt="3rem" display={{ md: 'flex' }} >
+  return <VStack alignItems="stretch" sx={sx}>
+    <Box py="3rem" bgGradient={gardiend} display={{ md: 'flex' }} >
       <Profile flex="1" />
       <Section flex="2" title="About me" mt={{ base: '2rem', md: "1rem" }}>
         <AboutMe />
       </Section>
     </Box>
     <Box>
-      <Section title="Experience" mt="2rem">
+      <Section title="Experience">
         <Experience />
       </Section>
     </Box><Box>
-      <Section title="Education" mt="2rem">
+      <Section title="Education">
         <Education />
       </Section>
     </Box>
+    <Toolbar />
   </VStack>
 }
 
