@@ -8,9 +8,11 @@ import Experience from "./sections/Experience";
 import Profile from "./sections/Profile";
 
 function CVPage() {
-  const value = useColorModeValue('colors.green.500', 'colors.green.300')
+  const value = useColorModeValue('colors.brand.500', 'colors.brand.300');
+  const inverseColor = useColorModeValue('white', 'colors.gray.800');
   const { colorMode, toggleColorMode } = useColorMode();
-  return <VStack padding="1em" alignItems="start" sx={{ "--contact-border-color": value }}>
+  const sx = { "--contact-border-color": value, "--text-color-inverse": inverseColor };
+  return <VStack padding="1em" alignItems="start" sx={sx}>
     <Button onClick={toggleColorMode}>
       Toggle {colorMode === "light" ? "Dark" : "Light"}
     </Button>

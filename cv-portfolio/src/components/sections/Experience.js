@@ -1,31 +1,34 @@
 import css from './Experience.module.css'
 import experience from '../../content/experience.json';
-import Timeline from '../layout/Timeline';
+import ZigZagList from '../layout/ZigZagList';
+import { Box, Text } from '@chakra-ui/layout';
 
 function Description({ description }) {
   if (typeof description === 'string') {
     return description;
   }
   if (Array.isArray(description)) {
-    return <ul className={css.descriptionList}>{description.map(x => <li><Description description={x} /></li>)}</ul>
+    return <ul className={css.descriptionList}>
+      {description.map(x => <li>
+        <Description description={x} />
+      </li>)}
+    </ul>
   }
   return null;
 }
 
 function ItemComponent({ item }) {
-  return <>
-    <li>Company: {item.company}</li>
-    <li>Title: {item.title}</li>
-    <li>Start: {item.start}</li>
-    <li>End: {item.end}</li>
-    <li>Description: <Description description={item.description} /></li>
-    {item.timeline && <Timeline items={item.timeline} ItemComponent={ItemComponent} />}
-  </>;
+  return <Box>
+    <Text fontWeight="extrabold" fontSize="lg">{[item.company, item.title].filter(Boolean).join(' - ')}</Text>
+    <Text as="sup">{[item.start, item.end].filter(Boolean).join(' - ')}</Text>
+    {item.description && <Description description={item.description} />}
+    {/* {item.timeline && <ZigZagList items={item.timeline} ItemComponent={ItemComponent} />} */}
+  </Box>;
 }
 
 function Experience() {
   const { timeline } = experience;
-  return <Timeline items={timeline} ItemComponent={ItemComponent} />;
+  return <ZigZagList items={timeline} ItemComponent={ItemComponent} />;
 }
 
 export default Experience;

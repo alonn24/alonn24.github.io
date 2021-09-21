@@ -4,9 +4,9 @@ import education from '../../content/education.json';
 import Timeline from '../layout/Timeline';
 
 function ItemComponent({ item }) {
-  const value = useColorModeValue('green.500', 'green.300');
-  const color = useColorModeValue('white', 'gray.800');
-  return <Box bg={value} color={color} borderRadius="16px" p="1em">
+  const bg = useColorModeValue('brand.500', 'brand.300');
+  
+  return <Box bg={bg} color={"var(--text-color-inverse)"} borderRadius="16px" p="1em">
     <Text fontWeight="extrabold" fontSize="lg">{item.organization}</Text>
     <Text fontSize="sm">{item.title}</Text>
     <Text as="sup">{item.start} - {item.end}</Text>
