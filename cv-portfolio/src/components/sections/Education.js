@@ -1,5 +1,4 @@
 import { Box, Text } from '@chakra-ui/react';
-import { useColorModeValue } from '@chakra-ui/color-mode';
 import education from '../../content/education.json';
 import Timeline from '../layout/Timeline';
 
