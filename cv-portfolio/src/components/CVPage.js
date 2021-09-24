@@ -18,17 +18,17 @@ function CVPage() {
   const sx = { "--contact-border-color": value, "--text-color-inverse": inverseColor };
   return <VStack alignItems="stretch" sx={sx}>
     <Box py="3rem" bgGradient={gardiend} display={{ md: 'flex' }} >
-      <Profile flex="1" />
-      <Section flex="2" title="About me" mt={{ base: '2rem', md: "1rem" }}>
+      <Profile as="h2" flex="1" />
+      <Section as="h1" flex="2" title="About me" mt={{ base: '2rem', md: "1rem" }}>
         <AboutMe />
       </Section>
     </Box>
     <Box>
-      <Section title="Experience">
+      <Section as="h1" title="Experience">
         <Experience />
       </Section>
     </Box><Box>
-      <Section title="Education">
+      <Section as="h1" title="Education">
         <Education />
       </Section>
     </Box>

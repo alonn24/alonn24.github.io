@@ -20,7 +20,7 @@ function Description({ description }) {
 
 function ItemComponent({ item }) {
   return <Box>
-    <Text fontWeight="extrabold" fontSize={{ base: "lg", md: "xl" }}>{[item.company, item.title].filter(Boolean).join(' - ')}</Text>
+    <Text as="h2" fontWeight="extrabold" fontSize={{ base: "lg", md: "xl" }}>{[item.company, item.title].filter(Boolean).join(' - ')}</Text>
     <Text as="sup">{[item.start, item.end].filter(Boolean).join(' - ')}</Text>
     {item.description && <Description description={item.description} />}
     <List>
@@ -28,7 +28,7 @@ function ItemComponent({ item }) {
         return <ListItem key={i} display="flex" mb="1rem">
           <ListIcon as={VscTerminal} mt="0.5em" />
           <Box>
-            <Text fontWeight="hairline" fontSize={{ base: "lg" }}>{x.title}</Text>
+            <Text as="h3" fontWeight="hairline" fontSize={{ base: "lg" }}>{x.title}</Text>
             <Text as="sup">{[x.start, x.end].filter(Boolean).join(' - ')}</Text>
             <Box>{(x.highlights || []).map(b => <CustomBadge key={b} me="0.5rem" mb="0.5em" secondary>{b}</CustomBadge>)}</Box>
             <Description description={x.description} />

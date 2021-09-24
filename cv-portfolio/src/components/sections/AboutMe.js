@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import profile from '../../content/profile.json';
 import CustomBadge from '../layout/CustomBadge';
-function AboutMe() {
+function AboutMe(props) {
   const { aboutMe, skills } = profile;
   return <div>
     <Box>{aboutMe}</Box>

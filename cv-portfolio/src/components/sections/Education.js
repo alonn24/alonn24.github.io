@@ -4,8 +4,8 @@ import Timeline from '../layout/Timeline';
 
 function ItemComponent({ item }) {
   return <Box bg={"var(--contact-border-color)"} color={"var(--text-color-inverse)"} borderRadius="16px" p="1em">
-    <Text fontWeight="extrabold" fontSize="lg">{item.organization}</Text>
-    <Text fontSize="sm">{item.title}</Text>
+    <Text as="h2" fontWeight="extrabold" fontSize="lg">{item.organization}</Text>
+    <Text as="h3" fontSize="sm">{item.title}</Text>
     <Text as="sup">{item.start} - {item.end}</Text>
   </Box>;
 }
