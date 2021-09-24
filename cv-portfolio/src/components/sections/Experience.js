@@ -10,7 +10,7 @@ function Description({ description }) {
   }
   if (Array.isArray(description)) {
     return <UnorderedList>
-      {description.map(x => <ListItem>
+      {description.map((x, i) => <ListItem key={i}>
         <Description description={x} />
       </ListItem>)}
     </UnorderedList>
@@ -24,15 +24,17 @@ function ItemComponent({ item }) {
     <Text as="sup">{[item.start, item.end].filter(Boolean).join(' - ')}</Text>
     {item.description && <Description description={item.description} />}
     <List>
-      {item.timeline.map(x => (<ListItem display="flex" mb="1rem">
-        <ListIcon as={VscTerminal} mt="0.5em" />
-        <Box>
-          <Text fontWeight="hairline" fontSize={{ base: "lg" }}>{x.title}</Text>
-          <Text as="sup">{[x.start, x.end].filter(Boolean).join(' - ')}</Text>
-          <Box>{(x.highlights || []).map(b => <CustomBadge me="0.5rem" mb="0.5em" secondary>{b}</CustomBadge>)}</Box>
-          <Description description={x.description} />
-        </Box>
-      </ListItem>))}
+      {item.timeline.map((x, i) => {
+        return <ListItem key={i} display="flex" mb="1rem">
+          <ListIcon as={VscTerminal} mt="0.5em" />
+          <Box>
+            <Text fontWeight="hairline" fontSize={{ base: "lg" }}>{x.title}</Text>
+            <Text as="sup">{[x.start, x.end].filter(Boolean).join(' - ')}</Text>
+            <Box>{(x.highlights || []).map(b => <CustomBadge key={b} me="0.5rem" mb="0.5em" secondary>{b}</CustomBadge>)}</Box>
+            <Description description={x.description} />
+          </Box>
+        </ListItem>
+      })}
     </List>
   </Box>;
 }

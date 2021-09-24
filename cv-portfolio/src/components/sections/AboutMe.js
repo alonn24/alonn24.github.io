@@ -6,7 +6,7 @@ function AboutMe() {
   return <div>
     <Box>{aboutMe}</Box>
     <Box my="1rem">
-      {skills.map(x => <CustomBadge me="0.5rem" mb="0.5em">{x}</CustomBadge>)}
+      {skills.map(x => <CustomBadge key={x} me="0.5rem" mb="0.5em">{x}</CustomBadge>)}
     </Box>
   </div>
 };

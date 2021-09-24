@@ -1,11 +1,11 @@
 import css from './ZigZagList.module.css'
 
-function ZigZagTimeLine({ items, ItemComponent }) {
+function ZigZagList({ items, ItemComponent }) {
   return <ul className={css.zigZagList}>
-    {items.map((item, i) => <li className={i % 2 ? css.listItemAlt : css.listItem}>
+    {items.map((item, i) => <li key={i} className={i % 2 ? css.listItemAlt : css.listItem}>
       <ItemComponent item={item} />
     </li>)}
   </ul>;
 };
 
-export default ZigZagTimeLine;
+export default ZigZagList;
