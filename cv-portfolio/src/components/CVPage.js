@@ -6,23 +6,20 @@ import AboutMe from "./sections/AboutMe";
 import Education from "./sections/Education";
 import Experience from "./sections/Experience";
 import Profile from "./sections/Profile";
+import Hero from "./layout/Hero";
 
 function CVPage() {
   const value = useColorModeValue('colors.primary.300', 'colors.primary.300');
   const inverseColor = useColorModeValue('colors.gray.800', 'colors.gray.800');
-  const gardiend = useColorModeValue(
-    "linear(to-r, secondary.300, primary.300)",
-    "linear(to-r, secondary.500, primary.500)"
-  );
   
   const sx = { "--contact-border-color": value, "--text-color-inverse": inverseColor };
   return <VStack alignItems="stretch" sx={sx}>
-    <Box py="3rem" bgGradient={gardiend} display={{ md: 'flex' }} >
-      <Profile as="h2" flex="1" />
-      <Section as="h1" flex="2" title="About me" mt={{ base: '2rem', md: "1rem" }}>
+    <Hero py="3rem">
+      <Profile position="relative" as="h2" flex="1" />
+      <Section position="relative" as="h1" flex="2" title="About me" mt={{ base: '2rem', md: "1rem" }}>
         <AboutMe />
       </Section>
-    </Box>
+    </Hero>
     <Box>
       <Section as="h1" title="Experience">
         <Experience />

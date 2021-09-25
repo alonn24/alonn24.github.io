@@ -1,5 +1,4 @@
 {
-  "avatarUrl": "/images/profile.webp",
   "firstName": "Alon",
   "lastName": "Yehezkel",
   "phone": "058-6622004",
@@ -17,5 +16,9 @@
     "User Experience",
     "Performance & Security Awareness",
     "SEO"
-  ]
+  ],
+  "links": [{
+    "title": "medium",
+    "link": "https://medium.com/@alonn24"
+  }]
 }

@@ -7,8 +7,8 @@ import profile from '../../content/profile.json';
 function Profile({as, ...props}) {
   return <VStack {...props} >
     <Box className={css.avatar}>
-      <Box className={css.overlay} bg="var(--contact-border-color)" />
-      <Avatar name={`${profile.firstName} ${profile.lastName}`} src={profile.avatarUrl} size="xl" />
+      <Box className={css.overlay} bg="black" />
+      <Avatar name={`${profile.firstName} ${profile.lastName}`} src="/images/my-profile.jpg" size="xl" />
     </Box>
     <Text as={as} casing="uppercase" textAlign="center" letterSpacing="0.2rem" fontWeight="extrabold" className={css.name}>{profile.firstName}<br />{profile.lastName}</Text>
     <Text as="i">{profile.role}</Text>
