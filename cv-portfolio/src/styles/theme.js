@@ -19,7 +19,6 @@ const components = {
     baseStyle: ({ colorMode }) => ({
       bg: colorMode === "dark" ? "secondary.300" : "secondary.300",
       color: colorMode === "dark" ? "gray.800" : "gray.800",
-      // textTransform: "uppercase",
       fontWeight: "semibold",
       padding: "2px 4px",
       borderRadius: "2px",
@@ -50,7 +49,7 @@ const config = {
       body: {
         fontFamily: "sans-serif",
         color: mode("gray.800", "whiteAlpha.900")(props),
-        bg: mode("white", "gray.800")(props),
+        bg: mode("#f8f8f8", "gray.800")(props),
         lineHeight: "base",
       },
     }),

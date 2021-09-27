@@ -11,7 +11,7 @@ import Hero from "./layout/Hero";
 function CVPage() {
   const value = useColorModeValue('colors.primary.300', 'colors.primary.300');
   const inverseColor = useColorModeValue('colors.gray.800', 'colors.gray.800');
-  
+
   const sx = { "--contact-border-color": value, "--text-color-inverse": inverseColor };
   return <VStack alignItems="stretch" sx={sx}>
     <Hero py="3rem">
@@ -20,15 +20,12 @@ function CVPage() {
         <AboutMe />
       </Section>
     </Hero>
-    <Box>
-      <Section as="h1" title="Experience">
-        <Experience />
-      </Section>
-    </Box><Box>
-      <Section as="h1" title="Education">
-        <Education />
-      </Section>
-    </Box>
+    <Section as="h1" title="Experience">
+      <Experience />
+    </Section>
+    <Section as="h1" title="Education">
+      <Education />
+    </Section>
     <Toolbar />
   </VStack>
 }

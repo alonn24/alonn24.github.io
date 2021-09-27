@@ -3,20 +3,7 @@
   position: relative;
 }
 
-.zigZagList {
-  position: relative;
-  padding-left: 2rem;
-}
-@media screen {
-  .zigZagList::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    border-right: 1px solid var(--contact-border-color);
-  }
-  
+@media screen {  
   .listItem, .listItemAlt {
     position: relative;
     color: var(--text-color-inverse);
@@ -46,18 +33,15 @@
     padding-left: 0;
   }
 
-  .zigZagList::before {
-    left: 50%;
-  }
-
   .listItemAlt {
-    margin-left: 55%;
+    margin-left: 52%;
   }
 
   .listItem {
-    margin-right: 55%;
+    margin-right: 52%;
     border-radius: 16px 0 0 16px;
   }
+  
   .listItem::before {
     content: "";
     position: absolute;
@@ -70,10 +54,3 @@
     border-left: 0.7em solid var(--contact-border-color);
   }
 }
-/* .listItem {
-  margin-right: 55%;
-}
-
-.listItemAlt {
-  margin-left: 55%;
-} */

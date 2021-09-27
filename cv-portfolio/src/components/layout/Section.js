@@ -3,12 +3,12 @@ import { VStack, Text, Box, useMediaQuery } from '@chakra-ui/react';
 function Section(props) {
   const [isPrint] = useMediaQuery('print');
   const { title, as, ...restProps } = props;
-  return <VStack p="1rem" alignItems="stretch" color="primary.100" {...restProps}>
-    <Text as={as} pl={{ base: '1rem', sm: '0' }}
-      pr={{ base: '0', sm: '1rem' }}
+  return <VStack px="1rem" alignItems="stretch" color="primary.100" {...restProps}>
+    <Text as={as} 
       fontWeight={isPrint ? 'extrabold' : "hairline"}
-      fontSize="xl"
-      alignSelf={{ base: isPrint ? 'start' : 'end', sm: 'start' }}
+      fontSize="2xl"
+      my="1.5rem"
+      alignSelf={{ base: 'center' }}
       className={css.title}>
       {title}
     </Text>

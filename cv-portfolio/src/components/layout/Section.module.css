@@ -2,9 +2,6 @@
   .title {
     text-transform: uppercase;
     font-style: italic;
-    padding-bottom: 0.5rem;
-    margin-bottom: 0.5rem;
     letter-spacing: 0.2rem;
-    border-bottom: 1px solid var(--contact-border-color);
   }
 }
