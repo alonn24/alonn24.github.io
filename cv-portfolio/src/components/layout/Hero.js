@@ -2,6 +2,10 @@ import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Image } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/layout";
 import css from './Hero.module.css';
+import heroMDWebP from './hero-images/hero-md.webp';
+import heroSWebP from './hero-images/hero-s.webp';
+import heroXLWebP from './hero-images/hero-xl.webp';
+import heroMD from './hero-images/hero-md.jpg'
 
 function Hero(props) {
   const gardiend = useColorModeValue(
@@ -10,16 +14,16 @@ function Hero(props) {
   );
   return <Box bgGradient={gardiend} display={{ md: 'flex' }} className={css.hero} {...props} >
     <picture>
-      <source srcset="images/hero-s.webp" type="image/webp" media="(max-width: 500px)"  />
-      <source srcset="images/hero-md.webp" type="image/webp" media="(max-width: 768px)"  />
-      <source srcset="images/hero-xl.webp" type="image/jpeg"  />
-      <Image srcSet="images/hero-s.jpg 500w,
-        images/hero-m.jpg 768w,
-        images/hero-xl.jpg 1024w"
+      <source srcset={heroSWebP} type="image/webp" media="(max-width: 500px)"  />
+      <source srcset={heroMDWebP} type="image/webp" media="(max-width: 768px)"  />
+      <source srcset={heroXLWebP} type="image/webp"  />
+      <Image srcSet={`${heroSWebP} 500w
+        ${heroMDWebP} 768w,
+        ${heroXLWebP} 1024w`}
         sizes="(max-width: 500px) 500px,
             (max-width: 768px) 768px,
             1024px"
-        src="images/hero-m.jpg"
+        // src={heroMD}
         width="100%"
         height="100%"
         alt="Hero image"
