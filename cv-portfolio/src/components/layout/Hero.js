@@ -1,14 +1,8 @@
-import { useColorModeValue } from "@chakra-ui/color-mode";
-import { Image } from "@chakra-ui/react";
-import { Box } from "@chakra-ui/layout";
+import { Box, Image } from "@chakra-ui/react";
 import css from './Hero.module.css';
 
 function Hero(props) {
-  const gardiend = useColorModeValue(
-    "linear(to-r, primary.500, primary.300)",
-    "linear(to-r, secondary.500, secondary.500)"
-  );
-  return <Box bgGradient={gardiend} display={{ md: 'flex' }} className={css.hero} {...props} >
+  return <Box className={css.hero} >
     <picture>
       <source srcset='images/hero/hero-s.jpg' media="(max-width: 500px)" />
       <source srcset='images/hero/hero-md.jpg' media="(max-width: 768px)" />
@@ -27,8 +21,9 @@ function Hero(props) {
         className={css.heroImage}
       />
     </picture>
-
-    {props.children}
+    <Box position="relative" display={{ md: 'flex' }} {...props}>
+      {props.children}
+    </Box>
   </Box>
 }
 

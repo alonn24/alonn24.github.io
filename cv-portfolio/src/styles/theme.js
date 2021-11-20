@@ -2,6 +2,12 @@ import { extendTheme } from "@chakra-ui/react"
 import { mode } from "@chakra-ui/theme-tools"
 
 const components = {
+  ColoredSection: {
+    baseStyle: ({ colorMode }) => ({
+      bg: colorMode === "dark" ? "rgba(246, 173, 85, 0.8)" : "rgba(49, 130, 206, 0.8)",
+      color: colorMode === "dark" ? "gray.800" : "whiteAlpha.900",
+    })
+  },
   CustomBadge: {
     baseStyle: ({ colorMode }) => ({
       bg: colorMode === "dark" ? "primary.300" : "secondary.500",
@@ -9,24 +15,19 @@ const components = {
       textTransform: "uppercase",
       fontWeight: "semibold",
       padding: "4px 8px",
-      borderRadius: "2px",
+      borderRadius: "6px",
       fontSize: "12px",
       display: 'inline-block',
       whiteSpace: "nowrap"
     }),
+    variants: {
+      secondary: ({ colorMode }) => ({
+        bg: colorMode === "dark" ? "secondary.300" : "secondary.300",
+        color: colorMode === "dark" ? "gray.800" : "gray.800",
+        padding: "2px 4px",
+      })
+    },
   },
-  CustomBadgeSecondary: {
-    baseStyle: ({ colorMode }) => ({
-      bg: colorMode === "dark" ? "secondary.300" : "secondary.300",
-      color: colorMode === "dark" ? "gray.800" : "gray.800",
-      fontWeight: "semibold",
-      padding: "2px 4px",
-      borderRadius: "2px",
-      fontSize: "12px",
-      display: 'inline-block',
-      whiteSpace: "nowrap"
-    }),
-  }
 }
 const config = {
   components,
@@ -42,14 +43,19 @@ const config = {
     trinary: {
       300: '#B794F4',
       500: '#805AD5'
+    },
+    background: {
+      light: 'gray.800',
+      dark: 'gray.50'
     }
   },
   styles: {
     global: (props) => ({
       body: {
         fontFamily: "sans-serif",
+        fontSize: "16px",
         color: mode("gray.800", "whiteAlpha.900")(props),
-        bg: mode("#f8f8f8", "gray.800")(props),
+        bg: mode("gray.50", "gray.800")(props),
         lineHeight: "base",
       },
     }),
