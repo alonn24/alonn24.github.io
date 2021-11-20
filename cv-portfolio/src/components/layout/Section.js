@@ -7,7 +7,6 @@ function Section(props) {
     <Text as={as} 
       fontWeight={isPrint ? 'extrabold' : "hairline"}
       fontSize="2xl"
-      my="1.5rem"
       alignSelf={{ base: 'center' }}
       className={css.title}>
       {title}
