@@ -1,4 +1,4 @@
-import { Box, VStack } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 import { useColorModeValue } from '@chakra-ui/color-mode';
 import Toolbar from './sections/Toolbar';
 import Section from './layout/Section';
@@ -14,9 +14,9 @@ function CVPage() {
 
   const sx = { "--contact-border-color": value, "--text-color-inverse": inverseColor };
   return <VStack alignItems="stretch" sx={sx}>
-    <Hero py="3rem">
-      <Profile position="relative" as="h2" flex="1" />
-      <Section position="relative" as="h1" flex="2" title="About me" mt={{ base: '2rem', md: "1rem" }}>
+    <Hero>
+      <Profile as="h2" />
+      <Section as="h1" flex="1" title="About me" mt={{ base: '1rem' }}>
         <AboutMe />
       </Section>
     </Hero>

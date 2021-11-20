@@ -1,9 +1,7 @@
 .hero {
   position: relative;
-  box-shadow: 0 8px 6px -6px black;
 }
 .heroImage {
-  content: "";
   position: absolute;
   top: 0px;
   right: 0px;

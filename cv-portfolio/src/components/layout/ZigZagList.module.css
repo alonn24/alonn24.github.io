@@ -3,13 +3,13 @@
   position: relative;
 }
 
-@media screen {  
+@media screen {
   .listItem, .listItemAlt {
     position: relative;
     color: var(--text-color-inverse);
     display: block;
     padding: 1rem;
-    background: var(--contact-border-color);
+    background: var(--chakra-colors-primary-300);
     border-radius: 0 16px 16px 0;
   }
   

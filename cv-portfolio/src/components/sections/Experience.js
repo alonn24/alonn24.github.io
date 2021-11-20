@@ -30,7 +30,7 @@ function ItemComponent({ item }) {
           <Box>
             <Text as="h3" fontWeight="hairline" fontSize={{ base: "lg" }}>{x.title}</Text>
             <Text as="sup">{[x.start, x.end].filter(Boolean).join(' - ')}</Text>
-            <Box>{(x.highlights || []).map(b => <CustomBadge key={b} me="0.5rem" mb="0.5em" secondary>{b}</CustomBadge>)}</Box>
+            <Box>{(x.highlights || []).map(b => <CustomBadge key={b} me="0.5rem" mb="0.5em" variant="secondary">{b}</CustomBadge>)}</Box>
             <Description description={x.description} />
           </Box>
         </ListItem>
