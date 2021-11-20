@@ -21,14 +21,25 @@
       "end": "present",
       "timeline": [
         {
+          "title": "Fullstack Team Lead",
+          "start": "Nov 2021",
+          "end": "present",
+          "highlights": ["Team Lead"],
+          "description": [
+            "TBD"
+          ]
+        },
+        {
           "title": "Software Engineer",
           "start": "Jul 2019",
+          "end": "Nov 2021",
           "highlights": ["Small Company", "All Around", "Cloud"],
           "description": [
             "Developing features end to end, services management, backend and front end",
-            "Fully functioned eCommerce flow from search, booking, cart management, user account, emails",
+            "Fully functioned eCommerce flow from search, booking, cart, user account, emails",
             "Inventory management using catalog service",
-            "Managing k8s services in GCP using managed MongoDB, Elastic Search DB, Redis, PubSub, BigQuery, etc.",
+            "Managing k8s services in GCP (GKE) using several technologies like Elastic Search, Redis, PubSub and BigQuery",
+            "performance monitpring using various tools such as Prometheus (grafana visualization), new relic, datadog and coralogix.",
             "Performance and security awareness using various technologies"
           ]
         }
@@ -40,22 +51,19 @@
       "end": "Jun 2019",
       "timeline": [
         {
-          "company": "Wix Stores",
-          "title": "Front End Developer",
-          "start": "Jan 2014",
-          "end": "2016",
-          "highlights": ["Front-End", "Clean Code", "eCommerce"],
+          "title": "Wix CRM - Site Members Team Lead",
+          "start": "2018",
+          "end": "Jun 2019",
+          "highlights": ["Team Lead", "Cross Company Collaboration"],
           "description": [
-            "Ecommerce funnel front end development using the Angular framework with 3rd party libraries to build rich and dynamic UI.",
-            "Write and maintain development environment technologies and build system tools such as Grunt, Bower, Sass/Compass etc.",
-            "Writing clean code, TDD with supportive technologies such as Karma, Jasmine, Protractor etc.",
-            "Source control using Git & Github, collaborate with the open source community.",
-            "Performance and lag free UX monitoring various technologies such as New Relic, Raygun.io, TrackJs, etc."
+            "Cross company team management with collaboration challenges",
+            "Developing multi-environment complementary features to manage members in Wix sites in Wix BO, site components and wix code module",
+            "Authorization and authentication features to manage users access to resources on the site using role based system",
+            "API exposure (REST, RPC) for consumers with auto generated documentation"
           ]
         },
         {
-          "company": "Wix ADI",
-          "title": "Front End Tech Lead",
+          "title": "Wix ADI - Core Team",
           "start": "2016",
           "end": "2018",
           "highlights": ["Clean Code", "Tech Lead"],
@@ -65,16 +73,16 @@
           ]
         },
         {
-          "company": "Wix CRM",
-          "title": "Site Members Team Lead",
-          "start": "2018",
-          "end": "Jun 2019",
-          "highlights": ["Team Lead", "Cross Company Collaboration"],
+          "title": "Wix Stores - Front End Developer",
+          "start": "Jan 2014",
+          "end": "2016",
+          "highlights": ["Front-End", "Clean Code", "eCommerce"],
           "description": [
-            "Cross company team management with collaboration challenges",
-            "Developing multi-environment complementary features to manage members in Wix sites in Wix BO, site components and wix code module",
-            "Authorization and authentication features to manage users access to resources on the site using role based system",
-            "API exposure (REST, RPC) for consumers with auto generated documentation"
+            "Ecommerce funnel front end development using the Angular framework with 3rd party libraries to build rich and dynamic UI.",
+            "Write and maintain development environment technologies and build system tools such as Grunt, Bower, Sass/Compass etc.",
+            "Writing clean code, TDD with supportive technologies such as Karma, Jasmine, Protractor etc.",
+            "Source control using Git & Github, collaborate with the open source community.",
+            "Performance and lag free UX monitoring various technologies such as New Relic, Raygun.io, TrackJs, etc."
           ]
         }
       ]
