@@ -20,7 +20,7 @@ function CVPage() {
    };
   return <>
     <RainyBackground />
-    <VStack alignItems="stretch" position="relative" sx={sx}>
+    <Box display="flex" flexDirection="column" alignItems="stretch" position="relative" sx={sx}>
       <Hero>
         <Profile as="h2" />
         <Section as="h1" flex="1" title="About me" mt={{ base: '1rem' }}>
@@ -34,7 +34,7 @@ function CVPage() {
         <Education />
       </Section>
       <Toolbar />
-    </VStack>
+    </Box>
   </>
 }
 

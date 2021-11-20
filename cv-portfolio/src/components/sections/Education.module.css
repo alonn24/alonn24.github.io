@@ -1,8 +1,8 @@
 .education {
   display: flex;
   align-items: stretch;
-  max-width:"100%";
 }
+
 .titleCard {
   flex: 0 0 250px;
   position: relative;
@@ -45,23 +45,47 @@
 }
 
 .cards {
-  overflow-x: scroll;
+  display: flex;
 }
-
 .card {
   padding: 1.5rem;
   border-radius: 16px;
-  background: var(--contact-border-color);
+  background: linear-gradient(
+    90deg,
+    var(--contact-border-color) 50%,
+    var(--background-color) 90%
+  );
   color: var(--text-color-inverse);
   display: flex;
   flex-direction: column;
-  transition: .2s;
+  transition: 0.5s;
+}
+
+@media screen and (min-width: 767px) {
+  .education {
+    max-width: 100%;
+    overflow-x: scroll;
+    padding: 1rem;
+  }
+  .card:hover {
+    transform: translate(-1rem) rotate(3deg);
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .cards {
+    margin-left: 1rem;
+  }
+  
 }
 
 @media screen and (max-width: 767px) {
-  .education {
+  .cards {
     flex-direction: column;
-  } 
+  }
+  .card + .card {
+    margin-top: 1rem;
+  }
 
   .titleCard {
     display: none;
