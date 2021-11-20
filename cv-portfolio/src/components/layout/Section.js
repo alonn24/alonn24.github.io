@@ -11,7 +11,7 @@ function Section(props) {
       className={css.title}>
       {title}
     </Text>
-    <Box>{props.children}</Box>
+    {props.children}
   </VStack>
 }
 

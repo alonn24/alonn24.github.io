@@ -1,5 +1,4 @@
-import { Image } from "@chakra-ui/react";
-import { Box } from "@chakra-ui/layout";
+import { Box, Image } from "@chakra-ui/react";
 import css from './Hero.module.css';
 
 function Hero(props) {

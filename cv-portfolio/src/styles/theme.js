@@ -43,6 +43,10 @@ const config = {
     trinary: {
       300: '#B794F4',
       500: '#805AD5'
+    },
+    background: {
+      light: 'gray.800',
+      dark: 'gray.50'
     }
   },
   styles: {
@@ -51,7 +55,7 @@ const config = {
         fontFamily: "sans-serif",
         fontSize: "16px",
         color: mode("gray.800", "whiteAlpha.900")(props),
-        bg: mode("#f8f8f8", "gray.800")(props),
+        bg: mode("gray.50", "gray.800")(props),
         lineHeight: "base",
       },
     }),
