@@ -16,7 +16,7 @@ function CVPage() {
   const sx = { "--contact-border-color": value, "--text-color-inverse": inverseColor };
   return <>
     <RainyBackground />
-    <VStack alignItems="stretch" sx={sx}>
+    <VStack alignItems="stretch" position="relative" sx={sx}>
       <Hero>
         <Profile as="h2" />
         <Section as="h1" flex="1" title="About me" mt={{ base: '1rem' }}>
