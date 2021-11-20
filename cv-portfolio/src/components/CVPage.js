@@ -1,4 +1,4 @@
-import { VStack, Box } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { useColorModeValue } from '@chakra-ui/color-mode';
 import Toolbar from './sections/Toolbar';
 import Section from './layout/Section';

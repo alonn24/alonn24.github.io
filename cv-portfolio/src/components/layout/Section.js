@@ -1,5 +1,5 @@
 import css from './Section.module.css'
-import { VStack, Text, Box, useMediaQuery } from '@chakra-ui/react';
+import { Text, Box, useMediaQuery } from '@chakra-ui/react';
 function Section(props) {
   const [isPrint] = useMediaQuery('print');
   const { title, as, ...restProps } = props;
