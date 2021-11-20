@@ -44,23 +44,24 @@
   white-space: nowrap;
 }
 
-.contact::before {
-  content: '';
-  display: block;
-  margin: auto;
-  margin-top: 0.5rem;
+.contact {
+  margin-top: 1rem;
+  text-align: center;
 }
-
 @media screen and (max-width: 767px) {
   .profile {
-    display: 'flex';
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
   }
 }
 
 @media screen and (min-width: 767px) {
   .profile {
-    margin: 12px;
-    border-radius: 16px;
+    margin: 0 12px 24px 0;
+    border-radius: 0 0 16px 0;
+    padding: 48px;
   }
 }

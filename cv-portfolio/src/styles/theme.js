@@ -4,7 +4,7 @@ import { mode } from "@chakra-ui/theme-tools"
 const components = {
   ColoredSection: {
     baseStyle: ({ colorMode }) => ({
-      bg: colorMode === "dark" ? "rgba(246, 173, 85, 0.8)" : "secondary.500",
+      bg: colorMode === "dark" ? "rgba(246, 173, 85, 0.8)" : "rgba(49, 130, 206, 0.8)",
       color: colorMode === "dark" ? "gray.800" : "whiteAlpha.900",
     })
   },

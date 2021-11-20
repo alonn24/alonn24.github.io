@@ -6,7 +6,7 @@ import profile from '../../content/profile.json';
 
 function Profile({as, ...props}) {
   const styles = useStyleConfig("ColoredSection")
-  return <VStack {...props} sx={styles} className={css.profile}>
+  return <Box {...props} sx={styles} className={css.profile}>
     <Box className={css.avatar}>
       <Box className={css.overlay} bg="black" />
       <Avatar name={`${profile.firstName} ${profile.lastName}`} src="/images/my-profile.jpg" size="xl" />
@@ -19,7 +19,7 @@ function Profile({as, ...props}) {
         <Link aria-label="mail me" display="inline-block" px="1rem" href={`mailto:${profile.email}`}><VscMail /></Link>
       </Box>
     </Box>
-  </VStack>;
+  </Box>;
 }
 
 export default Profile;
