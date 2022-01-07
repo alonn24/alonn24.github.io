@@ -39,7 +39,6 @@ const ExperienceCanvas = () => {
         // draw
         var p = particles[c];
         const d = parseInt(Math.abs(p.y - window.pageYOffset) / 50);
-        console.log(d)
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.arc(p.x, p.y, p.r + d, 0, Math.PI * 2);
