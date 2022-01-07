@@ -25,8 +25,10 @@ function useTypings(typingText) {
         return;
       }
       elemRef.current.append(typingText[i]);
+      const letter = typingText[i];
+      const timeout = (letter === '.' && 1000) || (letter === ',' && 500) || 50;
       i++;
-      await new Promise(resolve => setTimeout(resolve, 50));
+      await new Promise(resolve => setTimeout(resolve, timeout));
       handler();
     };
     handler();
