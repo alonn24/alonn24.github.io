@@ -1,0 +1,15 @@
+.cursor {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background-color: var(--contact-border-color);
+  margin-left: 2px;
+  animation: blink .6s linear infinite alternate;
+}
+
+@keyframes blink {
+  0% {opacity: 1;}
+  40% {opacity: 1;}
+  60% {opacity: 0;}
+  100% {opacity: 0;}
+}

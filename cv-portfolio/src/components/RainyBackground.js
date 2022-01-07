@@ -23,33 +23,41 @@ const ExperienceCanvas = () => {
       particles.push({
         x: Math.random() * w,
         y: Math.random() * h,
-        l: Math.random() * 1,
-        xs: -5 + Math.random() * 10,
-        ys: Math.random() * 10 + 10,
         c: rainColors[parseInt(Math.random() * 2)],
-        lw: Math.random() * 5
+        r: Math.random() * 10,
+        // l: Math.random() * 1,
+        // xs: -5 + Math.random() * 10,
+        // ys: Math.random() * 10 + 10,
+        // lw: Math.random() * 5
       })
     }
 
     function draw() {
       ctx.clearRect(0, 0, w, h);
+      
       for (var c = 0; c < particles.length; c++) {
         // draw
         var p = particles[c];
+        const d = parseInt(Math.abs(p.y - window.pageYOffset) / 50);
+        console.log(d)
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
-        ctx.lineTo(p.x + p.l * p.xs, p.y + p.l * p.ys);
-        ctx.strokeStyle = p.c;
-        ctx.lineWidth = p.lw;
-        ctx.stroke();
+        ctx.arc(p.x, p.y, p.r + d, 0, Math.PI * 2);
+        ctx.fillStyle = p.c;
+        ctx.fill();
+        
+        // ctx.lineTo(p.x + p.l * p.xs, p.y + p.l * p.ys);
+        // ctx.strokeStyle = p.c;
+        // ctx.lineWidth = p.lw;
+        // ctx.stroke();
 
-        // move
-        p.x += p.xs;
-        p.y += p.ys;
-        if (p.x > w || p.y > h) {
-          p.x = Math.random() * w;
-          p.y = -20;
-        }
+        // // move
+        // p.x += p.xs;
+        // p.y += p.ys;
+        // if (p.x > w || p.y > h) {
+        //   p.x = Math.random() * w;
+        //   p.y = -20;
+        // }
       }
     }
 

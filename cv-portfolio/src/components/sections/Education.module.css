@@ -8,7 +8,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: 1.5rem;
 }
 .titleCard::before {
@@ -44,21 +44,19 @@
   z-index: 2;
 }
 
-.cards {
-  display: flex;
-}
 .card {
   padding: 1.5rem;
   border-radius: 16px;
-  background: linear-gradient(
-    90deg,
-    var(--contact-border-color) 50%,
-    var(--background-color) 90%
-  );
+  background: var(--contact-border-color);
   color: var(--text-color-inverse);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   transition: 0.5s;
+}
+
+.card + .card {
+  margin-top: 1rem;
 }
 
 @media screen and (min-width: 767px) {
@@ -67,9 +65,9 @@
     overflow-x: scroll;
     padding: 1rem;
   }
-  .card:hover {
+  /* .card:hover {
     transform: translate(-1rem) rotate(3deg);
-  }
+  } */
 }
 
 @media screen and (min-width: 767px) {
