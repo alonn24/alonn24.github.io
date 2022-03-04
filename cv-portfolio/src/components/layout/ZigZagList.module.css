@@ -6,11 +6,17 @@
 @media screen {
   .listItem, .listItemAlt {
     position: relative;
-    color: var(--text-color-inverse);
+    color: black;
     display: block;
     padding: 1rem;
-    background: var(--chakra-colors-primary-300);
+    background: var(--chakra-colors-trinary-300);
     border-radius: 0 16px 16px 0;
+  }
+  .listItem {
+    box-shadow: var(--chakra-colors-shadow-small-right);
+  }
+  .listItemAlt {
+    box-shadow: var(--chakra-colors-shadow-small-left);
   }
   
   .listItem::before, .listItemAlt::before {
@@ -21,7 +27,7 @@
     right: 100%;
     border-top: 0.7em solid transparent;
     border-bottom: 0.7em solid transparent;
-    border-right: 0.7em solid var(--contact-border-color);
+    border-right: 0.7em solid var(--chakra-colors-trinary-300);
   }
   
   .listItemAlt {
@@ -44,6 +50,6 @@
     border-top: 0.7em solid transparent;
     border-bottom: 0.7em solid transparent;
     border-right: 0;
-    border-left: 0.7em solid var(--contact-border-color);
+    border-left: 0.7em solid var(--chakra-colors-trinary-300);
   }
 }

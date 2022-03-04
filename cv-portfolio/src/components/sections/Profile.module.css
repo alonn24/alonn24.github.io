@@ -1,5 +1,6 @@
 .profile {
   padding: 24px 48px;
+  box-shadow: var(--chakra-colors-shadow-small-right);
 }
 
 .avatar {

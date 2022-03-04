@@ -11,7 +11,7 @@ import RainyBackground from "./RainyBackground";
 
 function CVPage() {
   const value = useColorModeValue('colors.primary.300', 'colors.primary.300');
-  const inverseColor = useColorModeValue('colors.gray.800', 'colors.gray.800');
+  const inverseColor = useColorModeValue('white', 'colors.gray.800');
   const background = useColorModeValue("colors.gray.50", "colors.gray.800");
   const sx = { 
     "--contact-border-color": value, 

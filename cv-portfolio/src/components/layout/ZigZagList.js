@@ -1,6 +1,7 @@
 import css from './ZigZagList.module.css'
 import { motion } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
+import { Box } from '@chakra-ui/react';
 
 const variants = {
   hidden: {
@@ -23,7 +24,7 @@ function ListItem({ i, ...props }) {
   });
   const isAlt = i % 2 === 1;
   return <motion.li ref={ref} variants={isAlt? altVariants : variants} animate={inView ? '' : 'hidden'} className={i % 2 ? css.listItemAlt : css.listItem}>
-    {props.children}
+    <Box>{props.children}</Box>
   </motion.li>;
 }
 

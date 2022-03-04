@@ -4,7 +4,7 @@ import { mode } from "@chakra-ui/theme-tools"
 const components = {
   ColoredSection: {
     baseStyle: ({ colorMode }) => ({
-      bg: colorMode === "dark" ? "rgba(246, 173, 85, 0.8)" : "rgba(49, 130, 206, 0.8)",
+      bg: colorMode === "dark" ? "primary.300" : "secondary.300",
       color: colorMode === "dark" ? "gray.800" : "whiteAlpha.900",
     })
   },
@@ -33,20 +33,24 @@ const config = {
   components,
   colors: {
     primary: {
-      300: '#F6AD55',
-      500: '#DD6B20'
+      300: 'rgb(100, 70, 129)',
+      500: 'rgb(60, 42, 77)'
     },
     secondary: {
-      300: '#63B3ED',
-      500: '#3182CE'
+      300: 'rgb(173 200 219);',
+      500: 'rgb(149, 173, 190);'
     },
     trinary: {
-      300: '#B794F4',
-      500: '#805AD5'
+      300: 'rgb(224, 240, 234);',
+      500: 'rgb(175 187 182);'
     },
     background: {
       light: 'gray.800',
       dark: 'gray.50'
+    },
+    shadow: {
+      'small-left': '-5px 0px 10px -4px #000000',
+      'small-right': '5px 0px 10px -4px #000000',
     }
   },
   styles: {

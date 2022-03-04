@@ -1,5 +1,5 @@
 import { VscTerminal } from "react-icons/vsc";
-import { Box, Text, UnorderedList, List, ListItem, ListIcon } from '@chakra-ui/react';
+import { Box, Text, UnorderedList, List, ListItem, ListIcon, useColorModeValue } from '@chakra-ui/react';
 import CustomBadge from '../layout/CustomBadge';
 import experience from '../../content/experience.json';
 import ZigZagList from '../layout/ZigZagList';
@@ -40,8 +40,11 @@ function ItemComponent({ item }) {
 }
 
 function Experience() {
+  const value = useColorModeValue('colors.primary.500', 'colors.primary.300');
   const { timeline } = experience;
-  return <ZigZagList items={timeline} ItemComponent={ItemComponent} />;
+  return <Box sx={{ color: value }}>
+    <ZigZagList items={timeline} ItemComponent={ItemComponent} />
+  </Box>;
 }
 
 export default Experience;

@@ -14,7 +14,7 @@ function Hero(props) {
             (max-width: 768px) 768px,
             1024px"
         width="100%"
-        height="100%"
+        height="100vh"
         alt="Hero image"
         objectFit="cover"
         objectPosition="top right"
