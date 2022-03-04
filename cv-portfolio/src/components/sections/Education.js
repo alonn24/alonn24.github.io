@@ -9,7 +9,7 @@ function Education() {
     <Box className={css.titleCard}>
       <q>Never stop learning, becuase life never stop teaching.</q>
     </Box>
-    <Box className={css.cards}>{timeline.map(item => <EducationCard item={item} />)}</Box>
+    <Box className={css.cards}>{timeline.map((item, index) => <EducationCard key={index} item={item} />)}</Box>
   </Box>
 }
 

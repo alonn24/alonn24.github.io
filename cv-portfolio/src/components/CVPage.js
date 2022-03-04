@@ -1,3 +1,4 @@
+import React, {Suspense} from 'react';
 import { Box } from "@chakra-ui/react";
 import { useColorModeValue } from '@chakra-ui/color-mode';
 import Toolbar from './sections/Toolbar';
@@ -7,7 +8,8 @@ import Education from "./sections/Education";
 import Experience from "./sections/Experience";
 import Profile from "./sections/Profile";
 import Hero from "./layout/Hero";
-import RainyBackground from "./RainyBackground";
+
+const RainyBackground = React.lazy(() => import('./RainyBackground'));
 
 function CVPage() {
   const value = useColorModeValue('colors.primary.300', 'colors.primary.300');
@@ -20,7 +22,9 @@ function CVPage() {
   };
   return <>
     <Box position="absolute" width="100%" height="100%">
-      <RainyBackground />
+      <Suspense fallback={null}>
+        <RainyBackground />
+      </Suspense>
     </Box>
     <Box display="flex" flexDirection="column" alignItems="stretch" position="relative" sx={sx}>
       <Hero>

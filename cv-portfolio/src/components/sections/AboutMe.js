@@ -47,7 +47,7 @@ function AboutMe(props) {
   return <div>
     <Box ref={aboutMeBoxRef}>
       <span ref={aboutMeRef}>{aboutMe}</span>
-      <span class={css.cursor}></span>
+      <span className={css.cursor}></span>
     </Box>
     <Box my="1rem">
       {skills.map(x => <CustomBadge key={x} me="0.5rem" mb="0.5em">{x}</CustomBadge>)}

@@ -1,6 +1,6 @@
 import React, { useRef, useMemo } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber"
-import * as THREE from 'three';
+import { Vector3, CatmullRomCurve3 } from 'three';
 import * as meshline from 'three.meshline'
 
 extend(meshline)
@@ -21,9 +21,9 @@ function Lines({ count, colors }) {
   const lines = useMemo(
     () =>
       new Array(count).fill().map(() => {
-        const pos = new THREE.Vector3(10 - Math.random() * 20, 10 - Math.random() * 20, 10 - Math.random() * 20)
-        const points = new Array(30).fill().map(() => pos.add(new THREE.Vector3(4 - Math.random() * 8, 4 - Math.random() * 8, 2 - Math.random() * 4)).clone())
-        const curve = new THREE.CatmullRomCurve3(points).getPoints(1000)
+        const pos = new Vector3(10 - Math.random() * 20, 10 - Math.random() * 20, 10 - Math.random() * 20)
+        const points = new Array(30).fill().map(() => pos.add(new Vector3(4 - Math.random() * 8, 4 - Math.random() * 8, 2 - Math.random() * 4)).clone())
+        const curve = new CatmullRomCurve3(points).getPoints(1000)
         return {
           color: colors[parseInt(colors.length * Math.random())],
           width: Math.max(0.1, 0.2 * Math.random()),
@@ -38,8 +38,8 @@ function Lines({ count, colors }) {
 
 const RainyBackground = () => {
   return <Canvas linear camera={{ position: [0, 0, 20], fov: 90 }}>
-  <Lines count={20} colors={colors} />
-</Canvas>
+    <Lines count={20} colors={colors} />
+  </Canvas>
 };
 
 export default RainyBackground;
