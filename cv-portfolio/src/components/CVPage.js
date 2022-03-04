@@ -13,13 +13,15 @@ function CVPage() {
   const value = useColorModeValue('colors.primary.300', 'colors.primary.300');
   const inverseColor = useColorModeValue('white', 'colors.gray.800');
   const background = useColorModeValue("colors.gray.50", "colors.gray.800");
-  const sx = { 
-    "--contact-border-color": value, 
+  const sx = {
+    "--contact-border-color": value,
     "--text-color-inverse": inverseColor,
     "--background-color": background,
-   };
+  };
   return <>
-    <RainyBackground />
+    <Box position="absolute" width="100%" height="100%">
+      <RainyBackground />
+    </Box>
     <Box display="flex" flexDirection="column" alignItems="stretch" position="relative" sx={sx}>
       <Hero>
         <Profile as="h2" />

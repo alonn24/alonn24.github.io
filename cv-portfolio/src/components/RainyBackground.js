@@ -1,73 +1,45 @@
-import React from "react";
+import React, { useRef, useMemo } from "react";
+import { Canvas, extend, useFrame } from "@react-three/fiber"
+import * as THREE from 'three';
+import * as meshline from 'three.meshline'
 
-const rainColors = ["rgba(49, 130, 206, 0.8)", "rgba(246, 173, 85, 0.8)"];
-const ExperienceCanvas = () => {
-  const canvasRef = React.useRef();
+extend(meshline)
 
-  React.useEffect(() => {
-    const canvas = canvasRef.current;
-    const canvasContainer = canvas.parentNode;
-    canvas.width = canvasContainer.clientWidth;
-    canvas.height = canvasContainer.clientHeight;
-    var ctx = canvas.getContext('2d');
-    var w = canvas.width;
-    var h = canvas.height;
+const colors = ["rgb(175, 187, 182)", "rgb(149, 173, 190)"];
+function Fatline({ curve, width, color, speed }) {
+  const material = useRef()
+  useFrame(() => (material.current.uniforms.dashOffset.value -= speed))
+  return (
+    <mesh>
+      <meshLine attach="geometry" points={curve} />
+      <meshLineMaterial attach="material" ref={material} transparent depthTest={false} lineWidth={width} color={color} dashArray={0.1} dashRatio={0.9} />
+    </mesh>
+  )
+}
 
-    // ctx.strokeStyle = value;
-    // ctx.lineWidth = 3;
+function Lines({ count, colors }) {
+  const lines = useMemo(
+    () =>
+      new Array(count).fill().map(() => {
+        const pos = new THREE.Vector3(10 - Math.random() * 20, 10 - Math.random() * 20, 10 - Math.random() * 20)
+        const points = new Array(30).fill().map(() => pos.add(new THREE.Vector3(4 - Math.random() * 8, 4 - Math.random() * 8, 2 - Math.random() * 4)).clone())
+        const curve = new THREE.CatmullRomCurve3(points).getPoints(1000)
+        return {
+          color: colors[parseInt(colors.length * Math.random())],
+          width: Math.max(0.1, 0.2 * Math.random()),
+          speed: Math.max(0.0001, 0.0005 * Math.random()),
+          curve
+        }
+      }),
+    [colors, count]
+  )
+  return lines.map((props, index) => <Fatline key={index} {...props} />)
+}
 
-    // Initialize maxParts drops
-    var particles = [];
-    var maxParts = 50;
-    for(var a = 0; a < maxParts; a++) {
-      particles.push({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        c: rainColors[parseInt(Math.random() * 2)],
-        r: Math.random() * 10,
-        // l: Math.random() * 1,
-        // xs: -5 + Math.random() * 10,
-        // ys: Math.random() * 10 + 10,
-        // lw: Math.random() * 5
-      })
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      
-      for (var c = 0; c < particles.length; c++) {
-        // draw
-        var p = particles[c];
-        const d = parseInt(Math.abs(p.y - window.pageYOffset) / 50);
-        ctx.beginPath();
-        ctx.moveTo(p.x, p.y);
-        ctx.arc(p.x, p.y, p.r + d, 0, Math.PI * 2);
-        ctx.fillStyle = p.c;
-        ctx.fill();
-        
-        // ctx.lineTo(p.x + p.l * p.xs, p.y + p.l * p.ys);
-        // ctx.strokeStyle = p.c;
-        // ctx.lineWidth = p.lw;
-        // ctx.stroke();
-
-        // // move
-        // p.x += p.xs;
-        // p.y += p.ys;
-        // if (p.x > w || p.y > h) {
-        //   p.x = Math.random() * w;
-        //   p.y = -20;
-        // }
-      }
-    }
-
-    const intervalID = setInterval(draw, 30);
-    return () => {
-      clearInterval(intervalID);
-    };
-  }, []);
-
-  const styles = { position: 'absolute', left: 0, width: '100%', top: 0, height: '100%' };
-  return <canvas ref={canvasRef} style={styles} />
+const RainyBackground = () => {
+  return <Canvas linear camera={{ position: [0, 0, 20], fov: 90 }}>
+  <Lines count={20} colors={colors} />
+</Canvas>
 };
 
-export default ExperienceCanvas;
+export default RainyBackground;
