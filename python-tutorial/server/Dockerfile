@@ -1,5 +1,5 @@
 # Use the official Python image as base image
-FROM python:3.9-slim
+FROM python:3.11.8-slim-bullseye
 
 # Set environment variables for Python buffering
 ENV PYTHONUNBUFFERED 1
