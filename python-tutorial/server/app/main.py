@@ -1,6 +1,4 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-from typing import Optional
 from routes.health_check import health_check_router
 from routes.main import books_router
 from config import ATLAS_URI, DB_NAME
@@ -11,6 +9,8 @@ app = FastAPI()
 app.include_router(health_check_router)
 
 # Connect to mongoDB database
+
+
 @app.on_event("startup")
 def startup_db_client():
     app.mongodb_client = MongoClient(ATLAS_URI)
@@ -21,5 +21,6 @@ def startup_db_client():
 @app.on_event("shutdown")
 def shutdown_db_client():
     app.mongodb_client.close()
+
 
 app.include_router(books_router, tags=["books"], prefix="/book")

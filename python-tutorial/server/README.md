@@ -1,7 +1,10 @@
 # Basic server with fastapi
 
 ## Development
+We are using 'tilt' to manage the kubernetes cluster locally. Please install `tilt` by following the instructions [here](https://docs.tilt.dev/install.html)
 
+
+```bash
 Run the following command to start the server:
 
 ```bash
@@ -9,7 +12,7 @@ Run the following command to start the server:
 > uvicorn app.main:app --reload --port 8080
 ```
 
-You can access the API (documentation)[http://localhost:8080/docs]
+You can access the API [documentation](http://localhost:8000/docs) and [redoc](http://localhost:8000/redoc) by visiting the respective links.
 
 Create a `.env` file with the following content:
 
