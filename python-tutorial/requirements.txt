@@ -1,3 +1,0 @@
-deepface==0.0.87
-opencv_python==4.9.0.80
-pytesseract==0.3.10
