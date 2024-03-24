@@ -15,10 +15,10 @@
   content: "";
   /* background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%); */
   background: linear-gradient(
-    130deg, 
-    var(--chakra-colors-primary-500) 10%, 
+    130deg,
+    var(--chakra-colors-primary-500) 10%,
     var(--chakra-colors-primary-300) 20%,
-    var(--chakra-colors-secondary-300)90%, 
+    var(--chakra-colors-secondary-300)90%,
     var(--chakra-colors-secondary-500));
   position: absolute;
   top: -5px;
@@ -45,7 +45,7 @@
 }
 
 .card {
-  padding: 1.5rem;
+  padding: 1.5rem 2rem 2rem 2rem;
   border-radius: 16px;
   background: var(--contact-border-color);
   color: var(--text-color-inverse);
@@ -74,7 +74,7 @@
   .cards {
     margin-left: 1rem;
   }
-  
+
 }
 
 @media screen and (max-width: 767px) {
