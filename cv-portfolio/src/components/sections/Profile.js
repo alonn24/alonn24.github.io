@@ -1,5 +1,10 @@
 import css from "./Profile.module.css";
 import { VscCallOutgoing, VscMail } from "react-icons/vsc";
+import {
+  SlSocialFacebook,
+  SlSocialInstagram,
+  SlSocialLinkedin,
+} from "react-icons/sl";
 import { motion } from "framer-motion";
 import { useStyleConfig, Text, Box, Avatar, Link } from "@chakra-ui/react";
 
@@ -39,23 +44,38 @@ function Profile() {
             {profile.lastName}
           </Text>
           <Text as="i">{profile.role}</Text>
-          <Box className={css.contact}>
-            <Link
-              aria-label="call me"
-              display="inline-block"
-              px="1rem"
-              href={`tel:${profile.phone}`}
-            >
-              <VscCallOutgoing />
-            </Link>
-            <Link
-              aria-label="mail me"
-              display="inline-block"
-              px="1rem"
-              href={`mailto:${profile.email}`}
-            >
-              <VscMail />
-            </Link>
+          <Box display="flex" flexDir="column" gap="1rem" alignItems="center">
+            <Box display="flex" gap="1rem" className={css.contact}>
+              <Link aria-label="call me" href={`tel:${profile.phone}`}>
+                <VscCallOutgoing />
+              </Link>
+              <Link aria-label="mail me" href={`mailto:${profile.email}`}>
+                <VscMail />
+              </Link>
+            </Box>
+            <Box display="flex" gap="1rem">
+              <Link
+                aria-label="facebook profile"
+                target="_blank"
+                href={profile.facebook}
+              >
+                <SlSocialFacebook />
+              </Link>
+              <Link
+                aria-label="instagram profile"
+                target="_blank"
+                href={profile.facebook}
+              >
+                <SlSocialInstagram />
+              </Link>
+              <Link
+                aria-label="linkedin profile"
+                target="_blank"
+                href={profile.linkedin}
+              >
+                <SlSocialLinkedin />
+              </Link>
+            </Box>
           </Box>
         </Box>
       </Box>
