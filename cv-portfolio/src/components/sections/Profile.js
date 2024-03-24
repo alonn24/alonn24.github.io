@@ -64,7 +64,7 @@ function Profile() {
               <Link
                 aria-label="instagram profile"
                 target="_blank"
-                href={profile.facebook}
+                href={profile.instagram}
               >
                 <SlSocialInstagram />
               </Link>
