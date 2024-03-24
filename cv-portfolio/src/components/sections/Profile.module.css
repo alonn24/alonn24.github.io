@@ -6,6 +6,7 @@
 .avatar {
   padding: 1em;
   position: relative;
+  margin-bottom: 1rem;
 }
 
 .overlay {

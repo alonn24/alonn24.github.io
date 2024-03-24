@@ -15,7 +15,7 @@ function Profile() {
     <Box sx={styles} className={css.profile}>
       <Box className={css.avatar}>
         <Box className={css.overlay} bg="black" />
-        <Avatar name={`${profile.firstName} ${profile.lastName}`} src="/images/my-profile.jpg" size="xl" />
+        <Avatar display="block" m="auto" name={`${profile.firstName} ${profile.lastName}`} src="/images/my-profile.png" size="xl" />
       </Box>
       <Box>
         <Text as="h2" casing="uppercase" textAlign="center" letterSpacing="0.2rem" fontWeight="extrabold" className={css.name}>{profile.firstName}<br />{profile.lastName}</Text>
