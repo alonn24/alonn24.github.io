@@ -47,7 +47,7 @@ function ItemComponent({ item }) {
         </Box>
       )}
       <List>
-        <Collapse in={isOpen} animateOpacity>
+        <Collapse in={isOpen} startingHeight={150} animateOpacity>
           {item.timeline.map((x, i) => {
             return (
               <ListItem key={i} display="flex" mb="1rem">
@@ -89,7 +89,7 @@ function Experience() {
   const value = useColorModeValue("colors.primary.500", "colors.primary.300");
   const { timeline } = experience;
   return (
-    <Box sx={{ color: value }}>
+    <Box color={value}>
       <ZigZagList items={timeline} ItemComponent={ItemComponent} />
     </Box>
   );
