@@ -1,0 +1,17 @@
+DATABASE_URI: ENC[AES256_GCM,data:FWJHFRjTC8pjY0t0vUrwhyKmQHFInVJxtdu7H9TuD7YuNPdkyh0qqMFRWRiAM4ltXcEw8g==,iv:bmVP4B4r+N3i94bBbWSBdtYAonfIF8V35pHztWPtR4c=,tag:awib3p7mapG+qpPyw9l8/Q==,type:str]
+DATABASE_NAME: ENC[AES256_GCM,data:yvFptG4aq+N75HAuPZp/QA==,iv:3RY4WAjhAK5HN+IrBZBUL8fMPhjJuKAgfgjdwjYeY/w=,tag:u2h2mVXiOxspiLwfI8sXLg==,type:str]
+sops:
+    kms:
+        - arn: arn:aws:kms:us-west-1:021468386450:key/6f5773a5-557d-4d45-8a79-5bae9d079879
+          created_at: "2024-03-24T10:23:54Z"
+          enc: AQICAHhzYfNaU7FlAc8GOcYcsswXiXK1WWruwGuSHYYkOOuzzwGUul8HI5lyklhkNRB7cUANAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMvinch5Q09kwVyNVWAgEQgDsF2t089GngxOI/kmuf7i6r9AQMRLMqwFhSKnTzzbrx57cNlBLGG3/0VobAuPoVOIXXGZW4KdtYNFpyig==
+          aws_profile: ""
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2024-03-24T10:23:55Z"
+    mac: ENC[AES256_GCM,data:tnQh5V+9gG+xzMF9aUEyFYM3N5KLxjvQtghQVUuIh4gFJzEQh2/+kPuCIncpcQHEFUY5viuGOhB49nzrA+QK1KFrkPFXG1enVIzee4AkoOUQOnvv5p8lZX6DW+HmKBykXZCcby9ThGEv5lZLMu0SZYm9EsBShwcCFCOGh7r6DbY=,iv:bU17oLD9yMoAZ/f5E1Zh7sblraagJkkam3GPV7i0f4Q=,tag:+sN5WQMMrMIak5VLqwl0KQ==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.7.3
