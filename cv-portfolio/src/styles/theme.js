@@ -16,15 +16,16 @@ const components = {
       fontWeight: "semibold",
       padding: "4px 8px",
       borderRadius: "6px",
-      fontSize: "12px",
-      display: 'inline-block',
+      fontSize: "14px",
+      display: "inline-block",
       whiteSpace: "nowrap"
     }),
     variants: {
       secondary: ({ colorMode }) => ({
         bg: colorMode === "dark" ? "secondary.300" : "secondary.300",
         color: colorMode === "dark" ? "gray.800" : "gray.800",
-        padding: "2px 4px",
+        padding: "4px 6px",
+        fontSize: "10px",
       })
     },
   },

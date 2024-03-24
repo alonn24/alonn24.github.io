@@ -18,12 +18,12 @@
     {
       "company": "Covver",
       "description": "Tailored and custom-branded corporate gift solutions",
-      "start": "Apr 2021",
+      "start": "Apr 2022",
       "end": "present",
       "timeline": [
         {
-          "title": "RND Manager",
-          "start": "Apr 2021",
+          "title": "R&D Manager",
+          "start": "Apr 2022",
           "end": "present",
           "highlights": ["Team Lead", "Growth"],
           "description": [
@@ -36,18 +36,19 @@
       "company": "Bookaway",
       "description": "Online platform that simplifies the process of booking travel tickets, including bus, train, ferry, and airport transfer services, across various destinations worldwide",
       "start": "Jul 2019",
-      "end": "Apr 2021",
+      "end": "Apr 2022",
       "timeline": [
         {
           "title": "Fullstack Team Lead",
           "start": "Nov 2021",
-          "end": "Apr 2021",
-          "highlights": ["Team Lead", "Growth"],
+          "end": "Apr 2022",
+          "highlights": ["Team Lead", "Growth", "Cloud"],
           "description": [
             "Guiding a team through dynamic environments, prioritizing expansion and adaptability for enhanced scalability.",
             "Creating roadmaps and strategies to align team objectives with organizational goals, ensuring optimal performance and efficiency.",
             "Balancing hands-on development responsibilities with team management duties, ensuring steadfast adherence to best practices and the delivery of consistent quality output.",
-            "Overseeing the recruitment process, encompassing candidate assessment, interviewing, and seamless onboarding."
+            "Overseeing the recruitment process, encompassing candidate assessment, interviewing, and seamless onboarding.",
+            "Managing cloud computing environments on Google Cloud Platform (GCP) and transitioning to Amazon Web Services (AWS), while also maintaining a microservices architecture with shared libraries in Node.js."
           ]
         },
         {
@@ -76,7 +77,7 @@
           "title": "Wix CRM - Site Members Team Lead",
           "start": "2018",
           "end": "Jun 2019",
-          "highlights": ["Team Lead", "Cross Company Collaboration"],
+          "highlights": ["Team Lead", "Cross-functional Team Leadership"],
           "description": [
             "Managing teams across different companies while addressing collaboration challenges.",
             "Creating cross-environment features to seamlessly manage members within Wix sites, spanning Wix Back Office (BO), site components, and Wix Code modules.",
@@ -85,7 +86,7 @@
           ]
         },
         {
-          "title": "Wix ADI - Core Team",
+          "title": "Wix ADI - Core Team Software Engineer",
           "start": "2016",
           "end": "2018",
           "highlights": ["Clean Code", "Tech Lead"],
@@ -95,7 +96,7 @@
           ]
         },
         {
-          "title": "Wix Stores - Front End Developer",
+          "title": "Wix Stores - Front End Engineer",
           "start": "Jan 2014",
           "end": "2016",
           "highlights": ["Front-End", "Clean Code", "eCommerce"],

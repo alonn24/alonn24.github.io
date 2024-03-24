@@ -11,14 +11,17 @@
   "aboutMe": "A husband, a father and a Software Developer. A Mamram Graduate IDF Captain officer, experienced in the industry including code development, testing, integration and service management within an IT organization. BA in Computer Science – Systems & Applications with the Open University of Israel.",
   "bio": "Meet Alon Yehezkel—part-time software wizard, full-time dad extraordinaire, and basketball fanatic. At 36, he's not just crunching code; he's crafting software magic with a side of dad jokes. When he's not debugging, you'll find him coaching his two mini-munchkins on the finer points of life or hitting the court for some hoop action. Alon's approach to fatherhood is like his coding style—simple, yet effective, with a dash of fun thrown in. With his trusty planner in hand, he effortlessly juggles bits and bytes with bedtime stories, proving that work-life balance is not just a myth—it's a slam dunk. Whether he's coding or shooting hoops, Alon's motto remains the same: keep it simple, stay playful, and never stop growing.",
   "skills": [
-    "Web Development",
-    "Clean Code",
+    "Growth",
     "Team Lead",
-    "Team Player",
     "Autodidact",
+    "Web Development",
+    "Full Stack",
+    "Cloud",
+    "Clean Code",
     "Creativity",
     "User Experience",
-    "Performance & Security Awareness",
+    "Performance",
+    "Security",
     "SEO"
   ],
   "links": [{
