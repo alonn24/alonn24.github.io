@@ -1,0 +1,2 @@
+DATABASE_URI: mongodb://mongo-service/?retryWrites=true&w=majority
+DATABASE_NAME: pymongo_tutorial

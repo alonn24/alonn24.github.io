@@ -17,8 +17,8 @@ You can access the API [documentation](http://localhost:8000/docs) and [redoc](h
 Create a `.env` file with the following content:
 
 ```
-ATLAS_URI=mongodb://mongo-service/?retryWrites=true&w=majority
-DB_NAME=pymongo_tutorial
+DATABASE_URI=mongodb://mongo-service/?retryWrites=true&w=majority
+DATABASE_NAME=pymongo_tutorial
 ```
 
 ## Linting
