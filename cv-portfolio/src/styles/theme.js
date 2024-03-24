@@ -5,13 +5,13 @@ const components = {
   ColoredSection: {
     baseStyle: ({ colorMode }) => ({
       bg: colorMode === "dark" ? "primary.300" : "secondary.300",
-      color: colorMode === "dark" ? "gray.800" : "whiteAlpha.900",
+      color: colorMode === "dark" ? "whiteAlpha.900" : "gray.800",
     })
   },
   CustomBadge: {
     baseStyle: ({ colorMode }) => ({
       bg: colorMode === "dark" ? "primary.300" : "secondary.500",
-      color: colorMode === "dark" ? "gray.800" : "whiteAlpha.900",
+      color: colorMode === "dark" ? "whiteAlpha.900" : "gray.800",
       textTransform: "uppercase",
       fontWeight: "semibold",
       padding: "4px 8px",
