@@ -9,7 +9,7 @@ import Experience from "./sections/Experience";
 import Profile from "./sections/Profile";
 import Hero from "./layout/Hero";
 
-const RainyBackground = React.lazy(() => import('./RainyBackground'));
+// const RainyBackground = React.lazy(() => import('./RainyBackground'));
 
 function CVPage() {
   const value = useColorModeValue('colors.primary.300', 'colors.primary.300');
@@ -23,7 +23,7 @@ function CVPage() {
   return <>
     <Box position="absolute" width="100%" height="100%">
       <Suspense fallback={null}>
-        <RainyBackground />
+        {/* <RainyBackground /> */}
       </Suspense>
     </Box>
     <Box display="flex" flexDirection="column" alignItems="stretch" position="relative" sx={sx}>
