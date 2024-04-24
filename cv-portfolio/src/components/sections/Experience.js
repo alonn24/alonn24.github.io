@@ -1,5 +1,5 @@
 import React from "react";
-import { VscTerminal } from "react-icons/vsc";
+import { VscTerminal, VscFolderOpened, VscFolder } from "react-icons/vsc";
 import {
   Box,
   Text,
@@ -10,31 +10,56 @@ import {
   ListItem,
   ListIcon,
   useColorModeValue,
+  useDisclosure,
 } from "@chakra-ui/react";
 import CustomBadge from "../layout/CustomBadge";
 import experience from "../../content/experience.json";
 import ZigZagList from "../layout/ZigZagList";
 
 function Description({ description }) {
+  const { isOpen, onToggle, onOpen } = useDisclosure({ defaultIsOpen: false });
+
   if (typeof description === "string") {
     return <Text fontSize="sm">{description}</Text>;
   }
+
   if (Array.isArray(description)) {
+    const hasMoreItems = description.length > 1;
     return (
-      <UnorderedList>
-        {description.map((x, i) => (
-          <ListItem key={i}>
-            <Description description={x} />
-          </ListItem>
-        ))}
-      </UnorderedList>
+      <>
+        <Collapse
+          in={!hasMoreItems || isOpen}
+          startingHeight={15}
+          animateOpacity
+          onClick={onOpen}
+          cursor={hasMoreItems ? "pointer" : "default"}
+        >
+          <UnorderedList>
+            {description.map((x, i) => (
+              <ListItem key={i}>
+                <Description description={x} />
+              </ListItem>
+            ))}
+          </UnorderedList>
+        </Collapse>
+        {hasMoreItems && (
+          <Button
+            variant="link"
+            mt="0.5rem"
+            color="gray.800"
+            sx={{ _hover: {}, _active: {} }}
+            onClick={onToggle}
+          >
+            {isOpen ? <VscFolderOpened /> : <VscFolder />}
+          </Button>
+        )}
+      </>
     );
   }
   return null;
 }
 
 function ItemComponent({ item }) {
-  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <Box>
       <Text as="h2" fontWeight="extrabold" fontSize={{ base: "lg", md: "xl" }}>
@@ -47,39 +72,34 @@ function ItemComponent({ item }) {
         </Box>
       )}
       <List>
-        <Collapse in={isOpen} startingHeight={150} animateOpacity>
-          {item.timeline.map((x, i) => {
-            return (
-              <ListItem key={i} display="flex" mb="1rem">
-                <ListIcon as={VscTerminal} mt="0.5em" />
+        {item.timeline.map((x, i) => {
+          return (
+            <ListItem key={i} display="flex" mb="1rem">
+              <ListIcon as={VscTerminal} mt="0.5em" />
+              <Box>
+                <Text as="h3" fontWeight="hairline" fontSize={{ base: "lg" }}>
+                  {x.title}
+                </Text>
+                <Text as="sup">
+                  {[x.start, x.end].filter(Boolean).join(" - ")}
+                </Text>
                 <Box>
-                  <Text as="h3" fontWeight="hairline" fontSize={{ base: "lg" }}>
-                    {x.title}
-                  </Text>
-                  <Text as="sup">
-                    {[x.start, x.end].filter(Boolean).join(" - ")}
-                  </Text>
-                  <Box>
-                    {(x.highlights || []).map((b) => (
-                      <CustomBadge
-                        key={b}
-                        me="0.5rem"
-                        mb="0.5em"
-                        variant="secondary"
-                      >
-                        {b}
-                      </CustomBadge>
-                    ))}
-                  </Box>
-                  <Description description={x.description} />
+                  {(x.highlights || []).map((b) => (
+                    <CustomBadge
+                      key={b}
+                      me="0.5rem"
+                      mb="0.5em"
+                      variant="secondary"
+                    >
+                      {b}
+                    </CustomBadge>
+                  ))}
                 </Box>
-              </ListItem>
-            );
-          })}
-        </Collapse>
-        <Button color="gray.800" size="xs" bg="secondary.500" sx={{_hover: {}, _active: {}}} onClick={() => setIsOpen(x => !x)}>
-          {isOpen ? "Less" : "More"}
-        </Button>
+                <Description description={x.description} />
+              </Box>
+            </ListItem>
+          );
+        })}
       </List>
     </Box>
   );

@@ -1,35 +1,34 @@
-import React, {Suspense} from 'react';
+import React from "react";
 import { Box } from "@chakra-ui/react";
-import { useColorModeValue } from '@chakra-ui/color-mode';
-import Toolbar from './sections/Toolbar';
-import Section from './layout/Section';
+import { useColorModeValue } from "@chakra-ui/color-mode";
+import Toolbar from "./sections/Toolbar";
+import Section from "./layout/Section";
 import AboutMe from "./sections/AboutMe";
 import Education from "./sections/Education";
 import Experience from "./sections/Experience";
 import Profile from "./sections/Profile";
 import Hero from "./layout/Hero";
 
-// const RainyBackground = React.lazy(() => import('./RainyBackground'));
-
 function CVPage() {
-  const value = useColorModeValue('colors.primary.300', 'colors.primary.300');
-  const inverseColor = useColorModeValue('white', 'colors.gray.800');
+  const value = useColorModeValue("colors.primary.300", "colors.primary.300");
+  const inverseColor = useColorModeValue("white", "colors.gray.800");
   const background = useColorModeValue("colors.gray.50", "colors.gray.800");
   const sx = {
     "--contact-border-color": value,
     "--text-color-inverse": inverseColor,
     "--background-color": background,
   };
-  return <>
-    <Box position="absolute" width="100%" height="100%">
-      <Suspense fallback={null}>
-        {/* <RainyBackground /> */}
-      </Suspense>
-    </Box>
-    <Box display="flex" flexDirection="column" alignItems="stretch" position="relative" sx={sx}>
+  return (
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="stretch"
+      position="relative"
+      sx={sx}
+    >
       <Hero>
         <Profile as="h2" />
-        <Section as="h1" flex="1" title="About me" mt={{ base: '1rem' }}>
+        <Section as="h1" flex="1" title="About me" mt={{ base: "1rem" }}>
           <AboutMe />
         </Section>
       </Hero>
@@ -41,7 +40,7 @@ function CVPage() {
       </Section>
       <Toolbar />
     </Box>
-  </>
+  );
 }
 
 export default CVPage;
