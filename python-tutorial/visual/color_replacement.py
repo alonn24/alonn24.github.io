@@ -39,13 +39,16 @@ def replace_by_lab(img: Image, replacements: dict[RGB, RGB]):
     replacement_at = np.array([hsv_replacements[tuple(color)] for color in colors_at])
 
     # Map on a flattened array and reshape
-    hsv = np.array(img.convert('HSV')).reshape(-1, 3)
+    hsv = np.array(img.convert('HSV').getdata())
     hsv[:, 0] = replacement_at[:, 0]
     hsv[:, 1] = (hsv[:, 1] / replacement_at[:, 1]) * hsv_colors_at[:, 1]
-    hsv = hsv.reshape((img.height, img.width, 3))
+
+    # Load back the image
+    hsv_image = Image.fromarray(np.zeros((img.height, img.width, 3)), mode='HSV')
+    hsv_image.putdata([tuple(x) for x in hsv])
 
     # restore alpha channel
-    result = np.array(Image.fromarray(hsv, mode='HSV').convert('RGBA'))
+    result = np.array(hsv_image.convert('RGBA'))
     result[..., 3] = np.array(img.convert('RGBA'))[..., 3]
     result = Image.fromarray(result, mode='RGBA')
     print(f"Completed all in {timer.toc():.0f} seconds")
