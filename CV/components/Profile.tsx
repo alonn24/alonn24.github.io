@@ -10,7 +10,7 @@ const Profile = () => {
   return (
     <div
       className="relative overflow-hidden bg-cover bg-center h-screen"
-      style={{ backgroundImage: "url('/marvel-background.jpg')" }}
+      style={{ backgroundImage: "url('/hero.png')" }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       <div className="container mx-auto px-4 h-full flex items-center relative z-10">
@@ -22,7 +22,7 @@ const Profile = () => {
             onHoverEnd={() => setIsHovered(false)}
           >
             <motion.img
-              src="/profile-picture.jpg"
+              src="/profile.png"
               alt="Alon Yehezkel"
               className="rounded-full w-full h-full object-cover"
               animate={isHovered ? { rotate: 360 } : {}}

@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { FaChevronDown } from "react-icons/fa"
 
 const experienceData = {
   timeline: [
@@ -157,7 +158,6 @@ const experienceData = {
 
 const Experience = () => {
   const [expandedCompany, setExpandedCompany] = useState<string | null>(null)
-  const [expandedRole, setExpandedRole] = useState<string | null>(null)
 
   return (
     <div className="container mx-auto px-4 py-16">
@@ -172,10 +172,15 @@ const Experience = () => {
             className="bg-gray-800 rounded-lg p-6 shadow-lg"
           >
             <h3
-              className="text-2xl font-bold mb-2 cursor-pointer hover:text-red-500 transition-colors"
+              className="text-2xl font-bold mb-2 cursor-pointer hover:text-red-500 transition-colors flex items-center justify-between"
               onClick={() => setExpandedCompany(expandedCompany === company.company ? null : company.company)}
             >
-              {company.company}
+              <span>{company.company}</span>
+              <FaChevronDown
+                className={`transition-transform duration-300 ${
+                  expandedCompany === company.company ? "transform rotate-180" : ""
+                }`}
+              />
             </h3>
             <p className="text-gray-400 mb-2">
               {company.start} - {company.end}
@@ -191,38 +196,26 @@ const Experience = () => {
                   <p className="mb-4">{company.description}</p>
                   {company.timeline.map((role, roleIndex) => (
                     <div key={role.title} className="mb-4">
-                      <h4
-                        className="text-xl font-semibold mb-2 cursor-pointer hover:text-red-500 transition-colors"
-                        onClick={() => setExpandedRole(expandedRole === role.title ? null : role.title)}
-                      >
-                        {role.title}
-                      </h4>
+                      <h4 className="text-xl font-semibold mb-2 text-red-500">{role.title}</h4>
                       <p className="text-gray-400 mb-2">
                         {role.start} - {role.end}
                       </p>
-                      <AnimatePresence>
-                        {expandedRole === role.title && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            <ul className="list-disc list-inside mb-2">
-                              {role.highlights.map((highlight, index) => (
-                                <li key={index}>{highlight}</li>
-                              ))}
-                            </ul>
-                            <ul className="list-disc list-inside pl-4">
-                              {role.description.map((desc, index) => (
-                                <li key={index} className="mb-1">
-                                  {desc}
-                                </li>
-                              ))}
-                            </ul>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                      <div>
+                        <div className="flex flex-wrap gap-2 mb-2">
+                          {role.highlights.map((highlight, index) => (
+                            <span key={index} className="bg-red-500 text-white px-2 py-1 rounded-full text-sm">
+                              {highlight}
+                            </span>
+                          ))}
+                        </div>
+                        <ul className="list-disc list-inside pl-4">
+                          {role.description.map((desc, index) => (
+                            <li key={index} className="mb-1">
+                              {desc}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   ))}
                 </motion.div>
