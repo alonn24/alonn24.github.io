@@ -55,7 +55,7 @@ export const experienceData = {
     },
     {
       company: "Wix.com",
-      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHTiqoaFoadyQ/company-logo_100_100/company-logo_100_100/0/1687355469486?e=1747267200&v=beta&t=HfzooLQykQ6rtaPi1A_vzNTNcCDJEgdpgOB_I_CyVd4",
+      logo: "/logos/wix.png",
       description:
         "Cloud-based platform that empowers users to create professional websites and online stores with ease, without requiring any coding skills.",
       start: "Jan 2014",
@@ -100,10 +100,10 @@ export const experienceData = {
     },
     {
       company: "Mamram",
-      logo: "https://media.licdn.com/dms/image/v2/C4D07AQEhigCEceuf8A/group-logo_image-shrink_48x48/group-logo_image-shrink_48x48/0/1631366037125?e=1739696400&v=beta&t=WQA0h1j0qgFfong49K3rgBHSq2EEwbyzIcvje2wxGW0",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/%D7%AA%D7%92_%D7%99%D7%97%D7%99%D7%93%D7%AA_%D7%9E%D7%9E%D7%A8%D7%9D.svg/1200px-%D7%AA%D7%92_%D7%99%D7%97%D7%99%D7%93%D7%AA_%D7%9E%D7%9E%D7%A8%D7%9D.svg.png",
       description:
         "prestigious computing unit within the Israel Defense Forces (IDF). Mamram serves as the IDF's central computing and information technology unit, responsible for training and developing highly skilled professionals in various fields related to information technology,",
-      start: "Mar 2012",
+      start: "May 2006",
       end: "Jan 2014",
       timeline: [
         {
