@@ -1,0 +1,171 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+6:I[8003,["185","static/chunks/app/layout-a1be33ef429efc17.js"],""]
+4:["slug","emerged-design","d"]
+0:["lsCHQZb48hgokjre02ryR",[[["",{"children":["publications",{"children":[["slug","emerged-design","d"],{"children":["__PAGE__?{\"slug\":\"emerged-design\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["publications",{"children":[["slug","emerged-design","d"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","publications","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","publications","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/443bb6d92958d5f1.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","meta",null,{"charSet":"utf-8"}],["$","link",null,{"rel":"icon","href":"/favicon.ico"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/profile.png"}],["$","meta",null,{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta",null,{"name":"theme-color","content":"#000000"}],["$","title",null,{"children":"Alon Yehezkel's CV"}],["$","meta",null,{"name":"description","content":"Resume of an experienced, professional software engineer."}],["$","meta",null,{"name":"keywords","content":"resume, software, web, javascript, nodejs, fullstack, cloud"}],["$","meta",null,{"property":"og:title","content":"Alon Yehezkel's CV"}],["$","meta",null,{"property":"og:url","content":"/images/cover.jpg"}],["$","meta",null,{"property":"og:description","content":"Resume of an experienced, professional software engineer."}],["$","meta",null,{"property":"og:image","content":"/images/cover.jpg"}],["$","meta",null,{"name":"twitter:card","content":"summary_large_image"}],["$","meta",null,{"name":"twitter:title","content":"Alon Yehezkel's CV"}],["$","meta",null,{"name":"twitter:image","content":"/images/cover.jpg"}],["$","meta",null,{"name":"twitter:description","content":"Resume of an experienced, professional software engineer."}],["$","link",null,{"rel":"apple-touch-icon","href":"/logo192.png"}],["$","link",null,{"rel":"manifest","href":"/manifest.json"}],["$","$L6",null,{"id":"schema-person","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org/\",\"@type\":\"Person\",\"name\":\"Alon Yehezkel\",\"url\":\"https://alonn24.github.io\",\"image\":\"https://alonn24.github.io/profile.png\",\"sameAs\":[\"https://www.facebook.com/alon.yehezkel.1\",\"https://twitter.com/alonn24\",\"https://www.linkedin.com/in/alonn24\",\"https://github.com/alonn24\"],\"jobTitle\":\"Software Engineer\",\"worksFor\":{\"@type\":\"Organization\",\"name\":\"Snappy\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://alonn24.github.io\"},\"author\":{\"@type\":\"Person\",\"name\":\"Alon Yehezkel\"},\"publisher\":{\"@type\":\"Person\",\"name\":\"Alon Yehezkel\"}}"}}],["$","$L6",null,{"id":"schema-publications","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"[{\"@context\":\"https://schema.org/\",\"@type\":\"Article\",\"headline\":\"Medium Publications by Alon Yehezkel\",\"author\":{\"@type\":\"Person\",\"name\":\"Alon Yehezkel\"},\"datePublished\":\"2023-01-01\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Medium\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://medium.com/favicon.ico\"}},\"url\":\"https://medium.com/@alonn24\",\"description\":\"Technical articles about software development, leadership, and best practices\"},{\"@context\":\"https://schema.org/\",\"@type\":\"Article\",\"headline\":\"Dev.to Publications by Alon Yehezkel\",\"author\":{\"@type\":\"Person\",\"name\":\"Alon Yehezkel\"},\"datePublished\":\"2023-01-01\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"DEV Community\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://dev.to/favicon.ico\"}},\"url\":\"https://dev.to/alonn24\",\"description\":\"Community posts about clean code, testing, and software architecture\"}]"}}]]}],["$","body",null,{"className":"__className_f367f3","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]],null],null],["$L7",null]]]]
+8:I[2972,["972","static/chunks/972-6567da0868a15ef4.js","527","static/chunks/app/publications/%5Bslug%5D/page-4e4b2bd52fb312d6.js"],""]
+9:T1fa2,<h1>Emergent Design</h1>
+<p>Making Better Decisions With Simplicity, Humility &#x26; Reality</p>
+<h2>How Do We Make Decisions?</h2>
+<p>Have you ever noticed how fast you form an opinion about something?
+A design idea shows up in a meeting, and within seconds your brain goes:</p>
+<ul>
+<li><em>“Yes, this makes sense.”</em></li>
+<li><em>“No, this won’t work.”</em></li>
+<li><em>“We should build it ourselves.”</em></li>
+<li><em>“Let’s use some 3rd party integration.”</em></li>
+</ul>
+<p>Most of these reactions feel logical.
+But they’re not. They’re instincts shaped by our <strong>past experiences</strong>, and they’re full of <strong>biases</strong>.</p>
+<p>We trust our first impressions far more than we should — and it affects decision making and architecture eventually.</p>
+<p>Before diving into systems, design, and trade-offs, let’s acknowledge the truth:</p>
+<p><strong>We don’t make decisions rationally. We make them emotionally first, then justify them logically.</strong></p>
+<p>And that’s exactly where things go wrong.</p>
+<hr>
+<h2><strong>A Quick Introduction</strong></h2>
+<p>I’ve spent years building systems, scaling teams, and making architectural decisions under pressure.
+Through that journey I realized something counter-intuitive:</p>
+<p><strong>The best architecture is not the one we design upfront —
+it’s the one that emerges from reality.</strong></p>
+<p>This discovery led me deep into Emergent Design.</p>
+<hr>
+<h1><strong>The Problem: We Are Biased Creatures</strong></h1>
+<p>To warm up the room, I often show a list of cognitive biases and ask the audience:</p>
+<blockquote>
+<p><em>“Who knows this one?”</em>
+<em>“Who has fallen for that one?”</em></p>
+</blockquote>
+<p>It's always fun — and uncomfortable — because everyone recognizes themselves.</p>
+<p>Here are some classics we hit daily as engineers:</p>
+<h3><strong>Confirmation Bias</strong></h3>
+<p>We notice evidence that supports what we already believe.
+<em>Example:</em> You prefer building auth in-house, so you read only articles that say “auth isn't that hard” and ignore warnings about security or enterprise SSO needs.</p>
+<h3><strong>Anchoring Bias</strong></h3>
+<p>We cling to the first estimate or idea we heard.
+<em>Example:</em> Someone says “two weeks,” and suddenly every discussion gravitates around that number — even when reality says otherwise.</p>
+<h3><strong>Availability Bias</strong></h3>
+<p>We judge decisions based on the examples that come to mind easily, not on actual data.
+<em>Example:</em> You once had a bad experience with a 3rd-party provider, so you think it’s risky — even if the real risk today is low.</p>
+<h3><strong>Sunk Cost Fallacy</strong></h3>
+<p>We stick with failing decisions because we’ve already invested time and resources.
+<em>Example:</em> You keep pushing a custom solution even though switching to Okta is now smarter — simply because you’ve already spent a month on it.</p>
+<h3><strong>Optimism Bias</strong></h3>
+<p>We underestimate risks because we believe things will “just work.”
+<em>Example:</em> You assume your custom identity solution will scale without issues — despite having zero data to support that confidence.</p>
+<p>These biases shape our decisions more than any design pattern or architectural principle ever will.</p>
+<hr>
+<h1><strong>A Real Story: Adding User Identity to a System</strong></h1>
+<p>Let’s take a real case:
+<strong>Adding user identity to a growing product.</strong></p>
+<p>Two separate contexts, two very different decisions.</p>
+<hr>
+<h2><strong>Case A: B2C — Simple, Fast, Self-Implemented Authentication</strong></h2>
+<ul>
+<li>Need a branded, tailored user experience</li>
+<li>Minimal business complexity</li>
+<li>Fast development cycles</li>
+<li>Few enterprise expectations</li>
+<li>Small team, tight deadlines</li>
+</ul>
+<p>Here, building auth internally is simple, cheap, and effective.
+A lightweight implementation works beautifully for a long time.</p>
+<p><em>Reality beats prediction.</em></p>
+<hr>
+<h2><strong>Case B: B2B — Okta + SAML Integration</strong></h2>
+<ul>
+<li>Enterprise customers expect SSO</li>
+<li>Compliance, audits, security reviews</li>
+<li>SLA guarantees</li>
+<li>Contractual obligations</li>
+<li>Multi-tenant complexity</li>
+</ul>
+<p>Here, building auth internally is a liability.
+Okta/SAML integration is the correct path.</p>
+<p><em>Context beats preference.</em></p>
+<hr>
+<h1><strong>What Is Emergent Design?</strong></h1>
+<p>Emergent Design is the discipline of <strong>letting architecture evolve based on present reality</strong>, instead of predicting the future.</p>
+<p>It’s not being “lazy” or “not planning.”
+It’s being honest about uncertainty.</p>
+<p>Here’s what it really means:</p>
+<h3><strong>1. Simplicity First</strong></h3>
+<p>Build the simplest version that works <strong>today</strong>, not the one you imagine you’ll need in 12 months.</p>
+<h3><strong>2. Reality-Driven Decisions</strong></h3>
+<p>Make decisions based on visible facts:</p>
+<ul>
+<li>customer needs</li>
+<li>performance metrics</li>
+<li>constraints</li>
+<li>team capacity</li>
+<li>operational incidents</li>
+</ul>
+<p>Not based on “what if one day…”</p>
+<h3><strong>3. Reversible Decisions</strong></h3>
+<p>Prefer choices you can undo cheaply.
+Interfaces, adapters, flags, modular boundaries — all give you the freedom to evolve.</p>
+<h3><strong>4. Bias Awareness</strong></h3>
+<p>Because we know our brain is unreliable, we make decisions <strong>consciously</strong>, not automatically.</p>
+<h3><strong>5. Continuous Evolution</strong></h3>
+<p>Architecture grows like a living organism —
+branching, pruning, shaping itself over time.</p>
+<hr>
+<h1><strong>Why Emergent Design Wins</strong></h1>
+<h3><strong>No Premature Commitments</strong></h3>
+<p>Most expensive architecture decisions are based on fictional futures.</p>
+<h3><strong>Lower Cost of Change</strong></h3>
+<p>Small reversible steps → fewer painful rewrites.</p>
+<h3><strong>Velocity Stays High</strong></h3>
+<p>Simplicity makes teams faster.</p>
+<h3><strong>Better Alignment with Reality</strong></h3>
+<p>The system reflects <em>actual needs</em>, not guesses.</p>
+<h3><strong>More Humility, Less Ego</strong></h3>
+<p>Design becomes a team sport, not a fight for whose idea wins.</p>
+<hr>
+<h1><strong>Supporting Values</strong></h1>
+<h3><strong>Simplicity</strong></h3>
+<p>Start with what works now.
+Get data before you predict.</p>
+<h3><strong>Humility</strong></h3>
+<p>Be okay saying:</p>
+<ul>
+<li>“I don’t know yet.”</li>
+<li>“Let’s try and then decide.”</li>
+<li>“Your point of view might be better.”</li>
+</ul>
+<h3><strong>Professional Curiosity</strong></h3>
+<p>Ask:</p>
+<ul>
+<li>“Is there a simpler way?”</li>
+<li>“Is this reversible?”</li>
+<li>“What signals are we seeing right now?”</li>
+</ul>
+<hr>
+<h1><strong>Actionable Takeaways</strong></h1>
+<h3><strong>1. Keep biases visible</strong></h3>
+<p>Call out assumptions, expose them, and verify them with facts.
+This makes the evolution of design visible and grounded.</p>
+<h3><strong>2. Question “known solutions”</strong></h3>
+<p>Just because a pattern exists
+doesn’t mean it fits your context.</p>
+<p><strong>Ask for other perspectives.
+Challenge defaults.
+Re-evaluate old decisions.</strong></p>
+<hr>
+<h1><strong>Final Recommendations</strong></h1>
+<ul>
+<li>Use known patterns when they fit the <strong>present problem</strong>, not future hypotheticals.</li>
+<li>Don’t stick to old decisions just because you made them.</li>
+<li>Keep communication open — the fastest way to catch biases is through feedback.</li>
+<li>Design in small reversible steps, and let the architecture emerge.</li>
+</ul>
+<hr>
+<h1><strong>Closing Thought</strong></h1>
+<p><strong>Emergent Design is not about doing less —
+it’s about doing the right things at the right time.</strong></p>
+<p>The best architecture is the one that grows with the truth,
+not the one built on our biases.</p>
+<p>Thanks for reading.
+Questions and discussions welcome.</p>
+2:["$","div",null,{"className":"bg-gray-900 min-h-dvh text-white","children":["$","div",null,{"className":"container mx-auto px-4 py-16","children":[["$","$L8",null,{"href":"/publications","className":"inline-flex items-center text-sm font-medium text-red-400 transition-colors hover:text-red-300","children":"← Back to Publications"}],["$","article",null,{"className":"mt-6 rounded-xl border border-gray-700 bg-gray-800 p-8 shadow-lg","children":[["$","header",null,{"className":"border-b border-gray-700 pb-6","children":[["$","h1",null,{"className":"text-4xl font-bold text-red-500","children":"Emergent Design"}],["$","p",null,{"className":"mt-3 text-sm text-gray-400","children":[["$","span",null,{"children":"Alon Yehezkel"}],["$","span",null,{"className":"mx-2","children":"•"}],["$","time",null,{"dateTime":"2025-11-19T00:00:00.000Z","children":"November 19, 2025"}]]}]]}],["$","div",null,{"className":"mt-6 space-y-6 text-gray-200 [&>p]:leading-7 [&>p]:text-gray-300 [&>h2]:text-3xl [&>h2]:font-semibold [&>h2]:text-white [&>h2]:tracking-tight [&>h3]:text-2xl [&>h3]:font-semibold [&>h3]:text-white [&>blockquote]:border-l-4 [&>blockquote]:border-red-500 [&>blockquote]:pl-4 [&>blockquote]:text-gray-300 [&>ul]:list-disc [&>ul]:pl-6 [&>ol]:list-decimal [&>ol]:pl-6 [&_a]:text-red-400 [&_a:hover]:text-red-300 [&_strong]:font-semibold","dangerouslySetInnerHTML":{"__html":"$9"}}]]}]]}]}]
+7:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Emergent Design · Publications"}],["$","meta","3",{"name":"description","content":"Making Better Decisions With Simplicity, Humility & Reality"}],["$","meta","4",{"name":"next-size-adjust"}]]
+1:null
