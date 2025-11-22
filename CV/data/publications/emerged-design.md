@@ -4,247 +4,388 @@ author: Alon Yehezkel
 date: 2025-11-19
 summary: Making Better Decisions With Simplicity, Humility & Reality
 ---
-# Emergent Design
-Making Better Decisions With Simplicity, Humility & Reality
 
 ## How Do We Make Decisions?
+Before we dive deep into emergent design - what is it and what is it good for, I would like to talk about decision making. Think about your last architectural decision. Did you evaluate every option objectively? Or did your experience whisper "this is how it's done"?
 
-Have you ever noticed how fast you form an opinion about something?
-A design idea shows up in a meeting, and within seconds your brain goes:
+Our minds rely on shortcuts, pattern recognition, gut feelings, and past successes. These shortcuts feel like wisdom, but they're often just biases in disguise.
 
-* *“Yes, this makes sense.”*
-* *“No, this won’t work.”*
-* *“We should build it ourselves.”*
-* *“Let’s use some 3rd party integration.”*
+Daniel Kahneman, in his book *Thinking, Fast and Slow*, describes two systems that drive how we think.
 
-Most of these reactions feel logical.
-But they’re not. They’re instincts shaped by our **past experiences**, and they’re full of **biases**.
+### **🔹 System 1 — Fast, Automatic, Instinctive**
+- reacts instantly  
+- operates on pattern recognition  
+- depends on past experiences  
+- makes snap judgments  
+- is emotional and unconscious  
 
-We trust our first impressions far more than we should — and it affects decision making and architecture eventually.
+Examples:
+- Instantly sensing someone’s tone  
+- Knowing a shortcut while driving without thinking  
+- Feeling that a technical solution “just makes sense”
 
-Before diving into systems, design, and trade-offs, let’s acknowledge the truth:
-
-**We don’t make decisions rationally. We make them emotionally first, then justify them logically.**
-
-And that’s exactly where things go wrong.
-
----
-
-## **A Quick Introduction**
-
-I’ve spent years building systems, scaling teams, and making architectural decisions under pressure.
-Through that journey I realized something counter-intuitive:
-
-**The best architecture is not the one we design upfront —
-it’s the one that emerges from reality.**
-
-This discovery led me deep into Emergent Design.
+System 1 is fast — but also **biased**, because it relies on shortcuts and incomplete memories.
 
 ---
 
-# **The Problem: We Are Biased Creatures**
+### **🔹 System 2 — Slow, Analytical, Deliberate**
+- reasons logically  
+- weighs trade-offs  
+- considers alternatives  
+- performs deeper analysis  
+- requires attention and energy  
 
-To warm up the room, I often show a list of cognitive biases and ask the audience:
+Examples:
+- Designing system architecture  
+- Planning a migration strategy  
+- Debugging a complex production issue  
+- Evaluating cost, scale, and complexity
 
-> *“Who knows this one?”*
-> *“Who has fallen for that one?”*
+System 2 is powerful — but **lazy**. It requires many resources from our brain.
 
-It's always fun — and uncomfortable — because everyone recognizes themselves.
+---
 
-Here are some classics we hit daily as engineers:
+We make most of our decision in system 1. Even when we think we're being rational, many decisions happen automatically.
 
-### **Confirmation Bias**
+- We hear a suggestion and instantly judge it.  
+- We lean toward solutions we used before.  
+- We assume difficulty based on a single memory.  
+- We trust our gut even when the context is different.  
 
-We notice evidence that supports what we already believe.
-*Example:* You prefer building auth in-house, so you read only articles that say “auth isn't that hard” and ignore warnings about security or enterprise SSO needs.
+This is how biases sneak into architecture.
 
-### **Anchoring Bias**
+## The Problem: Our Biases Sabotage Our Designs
+There are many biases affecting at any given time. These biases lead to over-engineering, premature decisions, and architectural decisions that fight reality instead of embracing it.
 
-We cling to the first estimate or idea we heard.
-*Example:* Someone says “two weeks,” and suddenly every discussion gravitates around that number — even when reality says otherwise.
+Here are the most common biases that quietly shape our technical decisions:
 
-### **Availability Bias**
+---
 
-We judge decisions based on the examples that come to mind easily, not on actual data.
-*Example:* You once had a bad experience with a 3rd-party provider, so you think it’s risky — even if the real risk today is low.
+### **🌟 Confirmation Bias**
+We seek data that confirms what we already believe, ignoring contradictory signals.
 
-### **Sunk Cost Fallacy**
+**Example:**  
+You personally prefer building auth in-house.  
+So you notice articles and success stories supporting self-implementation,  
+but you downplay customer requirements for enterprise SSO and overlook Okta/SAML integrations that clearly fit the need.
 
+**Result:**  
+You reinforce your initial belief instead of evaluating the real context.
+
+---
+
+### **🌟 Anchoring Bias**
+We cling to the first number, idea, or suggestion we hear — even when new data should change our mind.
+
+**Example:**  
+Someone casually says: “It’s maybe a two-week task.”  
+That becomes the anchor.  
+Even after discovering compliance steps, SAML configs, and testing needs,  
+everything still feels like “it shouldn’t be more than two weeks.”
+
+**Result:**  
+Planning becomes distorted by outdated expectations.
+
+---
+
+### **🌟 Sunk Cost Fallacy**
 We stick with failing decisions because we’ve already invested time and resources.
-*Example:* You keep pushing a custom solution even though switching to Okta is now smarter — simply because you’ve already spent a month on it.
 
-### **Optimism Bias**
+**Example:**  
+You’ve spent a month building your own authentication layer.  
+Halfway through, you realize Okta would solve your use case better.  
+But because you already invested weeks, you keep pushing forward.
 
-We underestimate risks because we believe things will “just work.”
-*Example:* You assume your custom identity solution will scale without issues — despite having zero data to support that confidence.
-
-These biases shape our decisions more than any design pattern or architectural principle ever will.
-
----
-
-# **A Real Story: Adding User Identity to a System**
-
-Let’s take a real case:
-**Adding user identity to a growing product.**
-
-Two separate contexts, two very different decisions.
+**Result:**  
+You commit even harder to a bad direction.
 
 ---
 
-## **Case A: B2C — Simple, Fast, Self-Implemented Authentication**
+### **🌟 Availability Bias**
+We rely on examples that come easily to mind, instead of looking at actual data.
 
-* Need a branded, tailored user experience
-* Minimal business complexity
-* Fast development cycles
-* Few enterprise expectations
-* Small team, tight deadlines
+**Example:**  
+Years ago, you had a bad experience with a third-party auth provider.  
+That memory is vivid, so you assume all such providers are risky.  
+Meanwhile, current tools like Okta are stable, mature, and widely used — but that info doesn’t “feel” as real.
 
-Here, building auth internally is simple, cheap, and effective.
-A lightweight implementation works beautifully for a long time.
-
-*Reality beats prediction.*
+**Result:**  
+You overestimate old risks and underestimate present realities.
 
 ---
 
-## **Case B: B2B — Okta + SAML Integration**
+### **🌟  Optimism Bias**
+We underestimate risks because we believe things will “probably work out.”
 
-* Enterprise customers expect SSO
-* Compliance, audits, security reviews
-* SLA guarantees
-* Contractual obligations
-* Multi-tenant complexity
+**Example:**  
+You assume your custom identity solution will scale effortlessly.  
+“No worries, auth is simple — it’ll be fine.”  
+But you ignore edge cases, security concerns, rate limits, incident history, and future integration needs.
 
-Here, building auth internally is a liability.
-Okta/SAML integration is the correct path.
+**Result:**  
+You commit to a path that looks smooth only because you're discounting the real-world complexity ahead.
 
-*Context beats preference.*
+## What Is Emergent Design?
 
----
+Emergent design is an approach to software architecture where the design evolves gradually through continuous feedback, real-world usage, and empirical evidence — rather than being fully planned upfront based on predictions and assumptions.
 
-# **What Is Emergent Design?**
+It's not about having no design. It's about **designing just enough** for what you know today, then letting the architecture emerge and adapt as you learn more.
 
-Emergent Design is the discipline of **letting architecture evolve based on present reality**, instead of predicting the future.
+### Incremental Evolution
 
-It’s not being “lazy” or “not planning.”
-It’s being honest about uncertainty.
+Architecture evolves based on real constraints, usage, and continuous learning.
 
-Here’s what it really means:
+Instead of designing the "final" architecture at the beginning, you:
+- Start with the simplest solution that solves the immediate problem
+- Observe how the system actually behaves in production
+- Identify real bottlenecks, pain points, and usage patterns
+- Evolve the architecture based on empirical data, not speculation
+- Refactor continuously as your understanding deepens
 
-### **1. Simplicity First**
+This is how healthy codebases grow. Through careful, deliberate evolution guided by reality.
 
-Build the simplest version that works **today**, not the one you imagine you’ll need in 12 months.
+### Opposes "Big Design Up Front" (BDUF)
 
-### **2. Reality-Driven Decisions**
+Avoids predicting the future. Designs adapt as reality unfolds.
 
-Make decisions based on visible facts:
+Traditional architecture often demands:
+- Complete requirements upfront (which are always incomplete or wrong)
+- Detailed system design before writing code
+- Predicting scalability needs years in advance
+- Choosing all technologies and patterns at project kickoff
 
-* customer needs
-* performance metrics
-* constraints
-* team capacity
-* operational incidents
+Emergent design rejects this. Why?
+- Requirements change as users interact with the product
+- You learn what actually matters only after shipping
+- Early decisions lock you into paths that may not fit later reality
+- Over-engineering for imagined futures wastes time and creates unnecessary complexity
 
-Not based on “what if one day…”
+Instead, emergent design makes decisions **just in time** — when you have the most information and the clearest understanding of the actual problem.
 
-### **3. Reversible Decisions**
+### Prioritizes Key Principles
 
-Prefer choices you can undo cheaply.
-Interfaces, adapters, flags, modular boundaries — all give you the freedom to evolve.
+Values facts over predictions, feedback over assumptions, and reversibility over certainty.
 
-### **4. Bias Awareness**
+Emergent design is guided by core principles:
 
-Because we know our brain is unreliable, we make decisions **consciously**, not automatically.
+- **Facts over predictions** - Use real data (metrics, logs, user feedback) rather than guesses about what might happen
+- **Feedback over assumptions** — Ship quickly, measure, learn, and adapt rather than assuming you know the right answer
+- **Reversibility over certainty** — Make decisions that are easy to reverse rather than trying to make "perfect" irreversible choices
+- **Simplicity over speculation** — Solve today's known problems simply, rather than building complex solutions for imagined future scenarios
+- **Evidence over ego** — Let the system's behavior guide decisions, not personal preferences or past successes
 
-### **5. Continuous Evolution**
+This mindset shift — from prediction to adaptation — is what enables emergent design to produce better, more maintainable systems.
 
-Architecture grows like a living organism —
-branching, pruning, shaping itself over time.
+## Two Identity Systems Use Cases
+Same problem, different contexts, different solutions
 
----
+### **🔹 Case A: B2C Product**
+Requirements: Branded experience, custom flows, full control over user journey
 
-# **Why Emergent Design Wins**
+Constraints: Small scale, speed to market, minimal dependencies
 
-### **No Premature Commitments**
+Decision: Self-implemented authentication
 
-Most expensive architecture decisions are based on fictional futures.
+Bias at play: Fear of missing future complexity led to questioning if this was "too simple"
 
-### **Lower Cost of Change**
+Reality: The simple solution works
 
-Small reversible steps → fewer painful rewrites.
+### **🔹 Case B: B2B Platform**
+Requirements: Enterprise SSO, compliance reviews, security audits (SOC2)
 
-### **Velocity Stays High**
+Constraints: Customer expectations, SLA demands, onboarding friction
 
-Simplicity makes teams faster.
+Decision: Integrate with Okta/SAML
 
-### **Better Alignment with Reality**
+Bias at play: Overconfidence that internal implementation would be "more flexible"
 
-The system reflects *actual needs*, not guesses.
+Reality: External identity providers are cheaper and safer.
 
-### **More Humility, Less Ego**
+## How to Do Emergent Design
 
-Design becomes a team sport, not a fight for whose idea wins.
+### Iterative Evolution
 
----
+Architecture grows like a tree:
 
-# **Supporting Values**
+- **Trunk** → Start with the main simple flow that solves the core problem. This is your foundation — straightforward, working code with minimal abstractions.
+- **Branches** → Add new capabilities only when actual needs appear. Each branch represents a real requirement that emerged from usage, not speculation.
+- **Pruning** → Regularly remove unnecessary complexity, dead code, and abstractions that no longer serve their purpose. Just as a tree prunes weak branches, your architecture should shed what doesn't contribute.
 
-### **Simplicity**
+Each iteration adds clarity, not chaos.
 
-Start with what works now.
-Get data before you predict.
+**Applied to B2C Product:**
+- **Trunk:** Simple username/password auth with JWT tokens
+- **Branch:** After launch, users requested "Remember Me" → added refresh tokens
+- **Branch:** High support tickets about forgotten passwords → added password reset flow
+- **Pruning:** Removed attempted social login integration that only 2% of users tried
 
-### **Humility**
+**Applied to B2B Platform:**
+- **Trunk:** Basic Okta SAML integration for single enterprise customer
+- **Branch:** Second customer needed Azure AD → added multi-provider support
+- **Branch:** Compliance audit required session management → added centralized session tracking
+- **Pruning:** Removed custom MFA logic after Okta's built-in MFA proved sufficient
 
-Be okay saying:
+### Decision-by-Signal
 
-* “I don’t know yet.”
-* “Let’s try and then decide.”
-* “Your point of view might be better.”
+Use workflow and system signals to decide when to evolve design:
 
-### **Professional Curiosity**
+- **Increased lead time** → When features take longer to deliver, it might signal tight coupling between components. Consider decoupling modules so teams can work independently.
+- **High defect rate** → When bugs cluster in certain areas, it suggests unclear module boundaries or tangled responsibilities. Refactor to create cleaner separations and clearer contracts.
+- **Slow deployment** → When deployments are painful or risky, it indicates architectural complexity. Simplify by reducing dependencies, improving modularity, or breaking down monolithic components.
 
-Ask:
+Kanban, metrics, logs, and feedback guide the next step.
 
-* “Is there a simpler way?”
-* “Is this reversible?”
-* “What signals are we seeing right now?”
+**Applied to B2C Product:**
+- **Signal:** User onboarding time increased from 30s to 2 minutes as more features were added
+- **Response:** Extracted auth flow from main app bundle, implemented lazy loading
+- **Signal:** 15% of login attempts failed due to rate limiting hitting too early
+- **Response:** Adjusted rate limit thresholds based on actual usage patterns, not assumptions
 
----
+**Applied to B2B Platform:**
+- **Signal:** Customer onboarding took 3+ weeks due to manual SAML configuration
+- **Response:** Built self-service SSO configuration wizard based on common patterns
+- **Signal:** Security audit took 4 weeks because auth logic was scattered across 8 services
+- **Response:** Centralized auth decisions in API gateway, simplified audit surface area
 
-# **Actionable Takeaways**
+### Avoiding Premature Complexity
 
-### **1. Keep biases visible**
+- **No gold-plating** — Don't add features or complexity beyond what's required, just to make it "perfect" or impressive. Solve today's problem with today's simplest solution.
+- **No "just in case" abstractions** — Don't create generic frameworks or layers because you think you "might need them later." Wait for real patterns to emerge from actual usage before abstracting.
+- **No building features for imagined customers** — Don't build capabilities for hypothetical users or future scenarios. Build for real users with real, validated needs.
 
-Call out assumptions, expose them, and verify them with facts.
-This makes the evolution of design visible and grounded.
+**Applied to B2C Product:**
+- **Avoided:** Building a multi-tenant user system "just in case" someone wants team accounts
+  - **Reality:** 98% of users are individuals; started simple with single-user accounts
+- **Avoided:** Creating an OAuth provider to let other apps integrate
+  - **Reality:** No one asked for it; built it only when 3rd integration request came 8 months later
+- **Avoided:** Complex role-based permissions system
+  - **Reality:** Simple "user vs admin" covered all actual needs for first year
 
-### **2. Question “known solutions”**
+**Applied to B2B Platform:**
+- **Avoided:** Building custom identity provider instead of using Okta
+  - **Reality:** Okta handled SSO, MFA, compliance out of the box; saved 6 months of work
+- **Avoided:** Supporting every possible SAML/OAuth variation upfront
+  - **Reality:** Started with top 3 providers (Okta, Azure AD, Google), added others only when customers requested
+- **Avoided:** Building fine-grained permission system before knowing actual org structures
+  - **Reality:** First customer had flat structure; complex RBAC added later when hierarchical orgs appeared
 
-Just because a pattern exists
-doesn’t mean it fits your context.
+### Known Patterns When Relevant
 
-**Ask for other perspectives.
-Challenge defaults.
-Re-evaluate old decisions.**
+If the domain fits:
 
----
+- **Use event sourcing** — When you need a complete audit trail, temporal queries, or the ability to replay history. Not for every CRUD app.
+- **Use clean architecture** — When your business logic is complex and needs isolation from infrastructure changes. Not for simple data pipelines or thin API wrappers.
+- **Use adapter patterns** — When you need to swap implementations or isolate from third-party dependencies. Not for stable, well-established integrations.
 
-# **Final Recommendations**
+But only if the problem actually justifies it. Don't apply patterns just because they're popular or you want to learn them.
 
-* Use known patterns when they fit the **present problem**, not future hypotheticals.
-* Don’t stick to old decisions just because you made them.
-* Keep communication open — the fastest way to catch biases is through feedback.
-* Design in small reversible steps, and let the architecture emerge.
+**Applied to B2C Product:**
+- **Pattern NOT used:** Event sourcing for user profile changes
+  - **Why:** Simple CRUD was sufficient; no regulatory need for complete history
+  - **What we did:** Used standard database updates with `updated_at` timestamps
+- **Pattern used:** Adapter pattern for email service
+  - **Why:** Needed to switch from SendGrid to AWS SES after 6 months due to cost
+  - **What we did:** Thin email interface made provider swap painless
 
----
+**Applied to B2B Platform:**
+- **Pattern used:** Event sourcing for authentication events
+  - **Why:** SOC2 compliance required complete audit trail of who accessed what and when
+  - **What we did:** Every login, permission change, and access attempt logged as immutable event
+- **Pattern used:** Clean architecture for SSO integration logic
+  - **Why:** Complex business rules for mapping external groups to internal roles
+  - **What we did:** Isolated SSO provider specifics from core authorization logic, making new provider integration easier
 
-# **Closing Thought**
+### Continuous Refactoring
 
-**Emergent Design is not about doing less —
-it’s about doing the right things at the right time.**
+- **Small daily refactors prevent big rewrites** — Make incremental improvements as part of every feature or fix. Rename unclear variables, extract functions, simplify conditionals. These tiny changes compound over time, keeping the codebase healthy and preventing the need for massive, risky refactoring projects.
+- **Evolution is built into the work, not postponed** — Don't create technical debt backlogs or wait for "refactoring sprints." Treat refactoring as an integral part of development. When you touch code, leave it better than you found it. Architecture evolves naturally through continuous small improvements, not through periodic overhauls.
 
-The best architecture is the one that grows with the truth,
-not the one built on our biases.
+**Applied to B2C Product:**
+- **Week 1:** While adding password reset, noticed auth validation scattered everywhere → extracted to single `validateCredentials()` function
+- **Week 4:** While fixing bug in token generation, consolidated 3 JWT utility files into one
+- **Month 2:** While adding "Remember Me," refactored session handling to use consistent cookie strategy
+- **Result:** After 6 months, auth code remained clean and easy to modify despite 15+ feature additions
 
-Thanks for reading.
-Questions and discussions welcome.
+**Applied to B2B Platform:**
+- **Week 2:** While adding Azure AD support, noticed SAML parsing duplicated → created shared parser utility
+- **Month 1:** While debugging customer issue, found provider configs hardcoded → moved to database-driven configuration
+- **Month 3:** While adding group mapping, refactored SSO flow to use pipeline pattern for better testability
+- **Result:** Adding new SSO provider went from 2 weeks (provider #2) to 2 days (provider #5) due to accumulated refinements
+
+## Benefits of Emergent Design
+
+### Better Fit to Reality
+
+Systems become naturally aligned with actual use cases, not fantasies.
+
+When you design based on real feedback and actual usage patterns, you build what users truly need — not what you imagined they might need. The architecture emerges from reality, making it inherently more relevant and useful.
+
+### Lower Cost of Change
+
+Small, reversible steps enable fast adaptation and reduce architectural lock-in.
+
+Because emergent design favors incremental changes and reversible decisions, pivoting becomes cheap. You're never locked into massive architectural commitments that take months to undo. Change is continuous and low-risk, not a painful exception.
+
+### Higher Team Velocity
+
+Reduced complexity leads to fewer surprises and faster, more efficient delivery.
+
+Simpler systems are easier to understand, modify, and extend. Teams spend less time fighting accidental complexity and more time delivering value. By avoiding premature abstractions and over-engineering, developers can move faster with confidence.
+
+### Less Risk
+
+Reversible decisions mitigate risks, preventing architectural failures and costly missteps.
+
+When most decisions can be reversed or adjusted easily, you eliminate the fear of "getting it wrong." There are no catastrophic architectural failures — only feedback loops that guide you toward better solutions. Risk is distributed across many small, safe steps instead of concentrated in a few big bets.
+
+### Sustainable Architecture
+
+Organic growth ensures the system remains clean, adaptable, and avoids expensive rewrites.
+
+Through continuous refactoring and iterative evolution, the codebase stays healthy over time. You never accumulate so much technical debt that a complete rewrite becomes necessary. The architecture evolves gracefully, adapting to new requirements while maintaining its structural integrity.
+
+## Mindset & Values
+
+### Humility
+
+Accept that knowledge evolves.
+
+You don't have all the answers upfront, and that's okay. Your initial assumptions will be incomplete or wrong. The best architecture today might need to change tomorrow. Embrace this uncertainty rather than fighting it. Admit when you're wrong, learn from mistakes, and recognize that evolving your understanding is a strength, not a weakness.
+
+### Curiosity
+
+Continuously question and explore.
+
+Don't accept the first solution that comes to mind. Ask "why" repeatedly. Investigate how systems actually behave in production. Explore alternatives even when one option seems obvious. Stay curious about what users really need, what metrics are telling you, and what patterns are emerging. Curiosity drives learning, and learning drives better design.
+
+### Adaptability
+
+Be ready to change course based on new information.
+
+When evidence contradicts your plan, adjust the plan — not the evidence. Be willing to pivot when signals indicate a different direction. Don't cling to decisions just because you made them. Flexibility isn't weakness; it's intelligence responding to reality. The best architects know when to abandon a path and try something else.
+
+### Communication
+
+Maintain open dialogue to align understanding.
+
+Share your reasoning, not just your conclusions. Discuss trade-offs openly. Make your assumptions visible so others can challenge them. Create space for disagreement and debate. Emergent design requires constant feedback loops, and those loops depend on clear, honest communication across the team, with stakeholders, and with users.
+
+## Practical Steps
+### Keep Biases Visible
+Call out your assumptions explicitly in design docs. Write down what you know versus what you think might happen.
+
+### Question "Known Solutions"
+Just because a pattern exists doesn't mean it fits your context. Challenge design inertia: "We've always done it this way" is not a reason.
+
+### Track Decision Reversibility
+Label architectural decisions as reversible or irreversible. Spend more time on irreversible choices, move fast on reversible ones.
+
+### Communicate Continuously
+Don't stick to old decisions just because you made them. Update your understanding as new information emerges.
+
+## Conclusion
+Emergent Design is not about doing less. It's about doing the right choise at the right time
+
+The best architecture grows with the truth. It responds to reality rather than fighting it. It evolves through humility, simplicity, and curiosity.
+
+> "Start simple. Stay humble. Let reality guide you."
