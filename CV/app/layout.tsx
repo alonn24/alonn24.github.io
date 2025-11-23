@@ -7,8 +7,40 @@ import { publicationsData } from "@/data/publicationsData"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Alon Yehezkel's CV",
+  title: {
+    default: "Alon Yehezkel's CV",
+    template: "%s | Alon Yehezkel's CV",
+  },
   description: "Resume of an experienced, professional software engineer.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/profile.png", type: "image/png" },
+    ],
+  },
+  openGraph: {
+    title: "Alon Yehezkel's CV",
+    description: "Resume of an experienced, professional software engineer.",
+    url: "https://alonn24.github.io",
+    images: [
+      {
+        url: "/images/cover.jpg",
+        alt: "Alon Yehezkel",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alon Yehezkel's CV",
+    description: "Resume of an experienced, professional software engineer.",
+    images: ["/images/cover.jpg"],
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+  themeColor: "#000000",
 }
 
 export default function RootLayout({
@@ -64,24 +96,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta charSet="utf-8" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" href="/profile.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
         <meta name="keywords" content="resume, software, web, javascript, nodejs, fullstack, cloud" />
-        <meta property="og:title" content={metadata.title} />
-        <meta property="og:url" content="/images/cover.jpg" />
-        <meta property="og:description" content={metadata.description} />
-        <meta property="og:image" content="/images/cover.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metadata.title} />
-        <meta name="twitter:image" content="/images/cover.jpg" />
-        <meta name="twitter:description" content={metadata.description} />
-
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
 

@@ -6,6 +6,7 @@ import { notFound } from "next/navigation"
 import matter from "gray-matter"
 import { remark } from "remark"
 import remarkHtml from "remark-html"
+import { PageBreadcrumb } from "@/components/PageBreadcrumb"
 
 type Publication = {
   title: string
@@ -98,11 +99,27 @@ export async function generateMetadata({ params }: PublicationPageProps): Promis
     }
   }
 
+  const description =
+    publication.summary ??
+    (publication.author ? `Read ${publication.title} by ${publication.author}.` : `Read ${publication.title}.`)
+
   return {
     title: `${publication.title} · Publications`,
-    description:
-      publication.summary ??
-      (publication.author ? `Read ${publication.title} by ${publication.author}.` : `Read ${publication.title}.`),
+    description,
+    openGraph: {
+      title: `${publication.title} · Publications`,
+      description,
+      type: "article",
+      ...(publication.publishedAtISO && { publishedTime: publication.publishedAtISO }),
+      ...(publication.author && {
+        authors: [publication.author],
+      }),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${publication.title} · Publications`,
+      description,
+    },
   }
 }
 
@@ -115,13 +132,15 @@ export default async function PublicationPage({ params }: PublicationPageProps) 
 
   return (
     <div className="bg-gray-900 min-h-dvh text-white">
-      <div className="container mx-auto px-4 py-16">
-        <Link
-          href="/publications"
-          className="inline-flex items-center text-sm font-medium text-red-400 transition-colors hover:text-red-300"
-        >
-          ← Back to Publications
-        </Link>
+      <div className="container mx-auto px-4 py-16 max-w-4xl">
+        <PageBreadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Publications", href: "/publications" },
+            { label: publication.title },
+          ]}
+          className="mb-6"
+        />
         <article className="mt-6 rounded-xl border border-gray-700 bg-gray-800 p-8 shadow-lg">
           <header className="border-b border-gray-700 pb-6">
             <h1 className="text-4xl font-bold text-red-500">{publication.title}</h1>

@@ -5,6 +5,8 @@ date: 2025-11-19
 summary: Making Better Decisions With Simplicity, Humility & Reality
 ---
 
+> **📊 Presentation Slides:** View the full slide deck for this article at [gamma.app/docs/Emergent-Design-z9z8mll2ideik2v](https://gamma.app/docs/Emergent-Design-z9z8mll2ideik2v)
+
 ## How Do We Make Decisions?
 Before we dive deep into emergent design - what is it and what is it good for, I would like to talk about decision making. Think about your last architectural decision. Did you evaluate every option objectively? Or did your experience whisper "this is how it's done"?
 
@@ -371,16 +373,16 @@ Maintain open dialogue to align understanding.
 Share your reasoning, not just your conclusions. Discuss trade-offs openly. Make your assumptions visible so others can challenge them. Create space for disagreement and debate. Emergent design requires constant feedback loops, and those loops depend on clear, honest communication across the team, with stakeholders, and with users.
 
 ## Practical Steps
-### Keep Biases Visible
+**Keep Biases Visible** - 
 Call out your assumptions explicitly in design docs. Write down what you know versus what you think might happen.
 
-### Question "Known Solutions"
+**Question "Known Solutions"** - 
 Just because a pattern exists doesn't mean it fits your context. Challenge design inertia: "We've always done it this way" is not a reason.
 
-### Track Decision Reversibility
+**Track Decision Reversibility** - 
 Label architectural decisions as reversible or irreversible. Spend more time on irreversible choices, move fast on reversible ones.
 
-### Communicate Continuously
+**Communicate Continuously** - 
 Don't stick to old decisions just because you made them. Update your understanding as new information emerges.
 
 ## Conclusion

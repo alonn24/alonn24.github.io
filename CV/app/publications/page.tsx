@@ -1,8 +1,10 @@
 
 import fs from "node:fs/promises"
 import path from "node:path"
+import type { Metadata } from "next"
 import Link from "next/link"
 import matter from "gray-matter"
+import { PageBreadcrumb } from "@/components/PageBreadcrumb"
 
 type PublicationInfo = {
   slug: string
@@ -81,12 +83,33 @@ async function getPublications(): Promise<PublicationInfo[]> {
   return publications
 }
 
+export const metadata: Metadata = {
+  title: "Publications",
+  description: "Browse through my publications and articles.",
+  openGraph: {
+    title: "Publications",
+    description: "Browse through my publications and articles.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Publications",
+    description: "Browse through my publications and articles.",
+  },
+}
+
 export default async function PublicationsPage() {
   const publications = await getPublications()
 
   return (
     <div className="bg-gray-900 min-h-dvh text-white">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 max-w-4xl">
+        <PageBreadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Publications" },
+          ]}
+          className="mb-6"
+        />
         <h1 className="text-4xl font-bold mb-8 text-center text-red-500">Publications</h1>
         {publications.length === 0 ? (
           <p className="text-center text-gray-400">No publications available yet. Check back soon.</p>
