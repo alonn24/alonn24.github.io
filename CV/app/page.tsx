@@ -1,9 +1,15 @@
+import dynamic from "next/dynamic"
 import Profile from "../components/Profile"
 import Skills from "../components/Skills"
 import Experience from "../components/Experience"
 import Education from "../components/Education"
 import RotatingQuotes from "../components/RotatingQuotes"
 import Publications from "../components/Publications"
+
+const DownloadCVButton = dynamic(
+  () => import("../components/DownloadCVButton"),
+  { ssr: false }
+)
 
 export default function Home() {
   return (
@@ -14,6 +20,7 @@ export default function Home() {
       <Experience />
       <Publications />
       <Education />
+      <DownloadCVButton />
     </div>
   )
 }

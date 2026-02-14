@@ -139,7 +139,7 @@ export const experienceData = {
           techStack: ["Node.js", "Typescript", "Kubernetes", "GCP", "AWS", "Microservices"],
         },
         {
-          title: "Software Engineer",
+          title: "Senior Software Engineer",
           start: "Jul 2019",
           end: "Nov 2021",
           impact: [
