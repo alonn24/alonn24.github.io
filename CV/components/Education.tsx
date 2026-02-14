@@ -19,7 +19,7 @@ const Education = () => {
             <h3 className="text-2xl font-bold mb-2">{edu.organization}</h3>
             <p className="text-xl mb-2">{edu.title}</p>
             <p className="text-gray-400">
-              {edu.start} - {edu.end}
+              {edu.start === edu.end ? edu.start : `${edu.start} - ${edu.end}`}
             </p>
           </motion.div>
         ))}

@@ -1,6 +1,12 @@
 export const educationData = {
   timeline: [
     {
+      organization: "Yozmot College",
+      title: "NLP (Neuro-Linguistic Programming) Master Practitioner",
+      start: "2024",
+      end: "2025",
+    },
+    {
       organization: "The Open University, Israel",
       title: "B.A., Computer Science - Systems & Applications.",
       start: "2006",
