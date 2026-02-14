@@ -1,24 +1,31 @@
 export const experienceData = {
   timeline: [
     {
-      company: "Covver",
-      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQEjSr703tV4hA/company-logo_100_100/company-logo_100_100/0/1688026185348/covver_logo?e=1747267200&v=beta&t=81LShsyJxKBymsBzxu3FQ2KcDJlxVAmkN2PtrtW_QUQ",
+      company: "Covver (Acquired by Snappy)",
+      logo: "/logos/covver.svg",
       description: "Tailored and custom-branded corporate gift solutions",
       start: "Apr 2022",
       end: "present",
       timeline: [
         {
-          title: "R&D Manager",
+          title: "Engineering Manager",
           start: "Apr 2022",
-          end: "present",
+          end: "Jan 2025",
           highlights: ["Team Lead", "Growth"],
-          description: ["TBD"],
+          description: ["Tailored and custom-branded corporate gift solutions"],
+        },
+        {
+          title: "Software Engineer",
+          start: "Jan 2025",
+          end: "present",
+          highlights: ["Tech", "Merge"],
+          description: []
         },
       ],
     },
     {
       company: "Bookaway",
-      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQEbmE_-Afgq3Q/company-logo_100_100/company-logo_100_100/0/1731333428238/bookaway_logo?e=1747267200&v=beta&t=b6CGGNODfL427gjEr5GEnu6RlOqEo7HEeqQ__ZKpJxs",
+      logo: "/logos/bookaway.svg",
       description:
         "Online platform that simplifies the process of booking travel tickets, including bus, train, ferry, and airport transfer services, across various destinations worldwide",
       start: "Jul 2019",
@@ -55,7 +62,7 @@ export const experienceData = {
     },
     {
       company: "Wix.com",
-      logo: "/logos/wix.png",
+      logo: "/logos/wix.svg",
       description:
         "Cloud-based platform that empowers users to create professional websites and online stores with ease, without requiring any coding skills.",
       start: "Jan 2014",
@@ -100,7 +107,7 @@ export const experienceData = {
     },
     {
       company: "Mamram",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/%D7%AA%D7%92_%D7%99%D7%97%D7%99%D7%93%D7%AA_%D7%9E%D7%9E%D7%A8%D7%9D.svg/1200px-%D7%AA%D7%92_%D7%99%D7%97%D7%99%D7%93%D7%AA_%D7%9E%D7%9E%D7%A8%D7%9D.svg.png",
+      logo: "/logos/mamram.png",
       description:
         "prestigious computing unit within the Israel Defense Forces (IDF). Mamram serves as the IDF's central computing and information technology unit, responsible for training and developing highly skilled professionals in various fields related to information technology,",
       start: "May 2006",
