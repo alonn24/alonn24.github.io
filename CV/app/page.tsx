@@ -1,4 +1,5 @@
 import Profile from "../components/Profile"
+import Skills from "../components/Skills"
 import Experience from "../components/Experience"
 import Education from "../components/Education"
 import RotatingQuotes from "../components/RotatingQuotes"
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <div className="bg-gray-900 min-h-dvh text-white">
       <Profile />
+      <Skills />
       <RotatingQuotes />
       <Experience />
       <Publications />
