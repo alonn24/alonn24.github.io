@@ -29,6 +29,10 @@ else
 fi
 
 echo "==> Stage 5: Push to gh-pages via subtree"
-git subtree push --prefix CV/out origin gh-pages
+# Split subtree and force-push so we always publish current build (remote may be ahead from prior pushes)
+SUBTREE_BRANCH="gh-pages-publish-$$"
+git subtree split --prefix CV/out -b "$SUBTREE_BRANCH"
+git push origin "$SUBTREE_BRANCH:gh-pages" --force
+git branch -D "$SUBTREE_BRANCH"
 
 echo "==> Done. CV is published to the gh-pages branch."
