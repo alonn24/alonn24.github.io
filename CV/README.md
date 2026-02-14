@@ -1,12 +1,29 @@
 # CV Portfolio
 
 ## Development
-* In order to work on the project, please install dependencies by running `yarn` in the root directory.
-* In order to start the development server, run `yarn start` in the root directory.
+* Install dependencies: `npm install` (run from the CV directory).
+* Start the development server: `npm start`.
 
-# Deployment
-After changing anything in the project, please run `yarn build` in the root directory. This will create a new build in the `build` directory. You can then move the build folder to `gh-pages` by running the following command in the root directory:
+## Deployment
+To publish the site to GitHub Pages, run the publish script from the CV directory:
+
 ```bash
-> touch CV/out/.nojekyll
-> git subtree push --prefix CV/out origin gh-pages
+./publish.sh
+```
+
+The script runs these stages:
+1. **Install** – `npm ci` or `npm install`
+2. **Build** – `npm run build` (Next.js static export → `out/`)
+3. **Prepare** – ensure `out/.nojekyll` exists for GitHub Pages
+4. **Commit** – stage and commit `CV/out` (skipped if no changes)
+5. **Publish** – `git subtree push --prefix CV/out origin gh-pages`
+
+To run the steps manually instead of using the script:
+
+```bash
+npm run build
+touch out/.nojekyll
+# From the repository root (parent of CV):
+git add CV/out && git commit -m "Build CV for gh-pages"
+git subtree push --prefix CV/out origin gh-pages
 ```
