@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import type React from "react"
 import Script from "next/script"
 import { publicationsData } from "@/data/publicationsData"
+import ScrollProgress from "@/components/ScrollProgress"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -115,7 +116,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ScrollProgress />
+        {children}
+      </body>
     </html>
   )
 }
