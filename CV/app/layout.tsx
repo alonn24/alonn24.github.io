@@ -4,6 +4,7 @@ import type React from "react"
 import Script from "next/script"
 import { publicationsData } from "@/data/publicationsData"
 import ScrollProgress from "@/components/ScrollProgress"
+import AmplitudeScript from "@/components/AmplitudeScript"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -115,8 +116,10 @@ export default function RootLayout({
             __html: JSON.stringify(publicationsSchema),
           }}
         />
+
       </head>
       <body className={inter.className}>
+        <AmplitudeScript />
         <ScrollProgress />
         {children}
       </body>
