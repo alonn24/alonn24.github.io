@@ -58,10 +58,11 @@ export const experienceData = {
           ],
           skills: [
             "Team Leadership",
-            "People Management",
             "Execution Ownership",
             "Cross-functional Collaboration",
             "Architecture Ownership",
+            "Integrations",
+            "API Design",
             "Code Quality",
           ],
           techStack: [
@@ -76,14 +77,12 @@ export const experienceData = {
             "Postgres",
             "Redis",
             "Next.js",
-            "Metabase",
-            "Amplitude",
             "HRIS",
-            "Payment",
+            "Stripe"
           ],
         },
         {
-          title: "Software Engineer",
+          title: "Senior Software Engineer",
           start: "Jan 2025",
           end: "present",
           impact: [
@@ -96,8 +95,9 @@ export const experienceData = {
             "Collaboration",
             "Code Quality",
             "Delivery",
+            "Serverless"
           ],
-          techStack: ["MongoDB", "Serverless", "AWS"],
+          techStack: ["NodeJS", "Typescript", "Serverless", "MongoDB", "AWS"],
         },
       ],
     },
@@ -129,13 +129,14 @@ export const experienceData = {
           ],
           skills: [
             "Team Leadership",
+            "System Architecture",
             "Roadmapping",
             "Hiring",
             "Mentoring",
             "Cross-functional Collaboration",
             "Architecture Ownership",
           ],
-          techStack: ["Node.js", "GCP", "AWS", "Microservices"],
+          techStack: ["Node.js", "Typescript", "Kubernetes", "GCP", "AWS", "Microservices"],
         },
         {
           title: "Software Engineer",
@@ -166,9 +167,9 @@ export const experienceData = {
           ],
           techStack: [
             "Node.js",
+            "Typescript",
             "Kubernetes",
             "GCP",
-            "GKE",
             "Elasticsearch",
             "Redis",
             "PubSub",
@@ -176,7 +177,6 @@ export const experienceData = {
             "Prometheus",
             "Grafana",
             "New Relic",
-            "Datadog",
             "Coralogix",
           ],
         },
@@ -213,7 +213,7 @@ export const experienceData = {
             "Security Engineering",
             "Platform Development",
           ],
-          techStack: ["REST", "RPC", "Authorization", "Authentication", "API Documentation"],
+          techStack: ["REST", "RPC", "Auth", "API Documentation"],
         },
         {
           title: "Wix ADI - Core Team Software Engineer",
@@ -235,14 +235,7 @@ export const experienceData = {
             "TDD",
             "Code Quality",
           ],
-          techStack: [
-            "Wix View Renderer",
-            "TDD",
-            "SOLID",
-            "KISS",
-            "YAGNI",
-            "DRY",
-          ],
+          techStack: [],
         },
         {
           title: "Wix Stores - Front End Engineer",
@@ -318,7 +311,7 @@ export const experienceData = {
             "Availability Management",
             "Technical Leadership",
           ],
-          techStack: ["HP BSM"],
+          techStack: [],
         },
         {
           title: "CM Team Leader",
