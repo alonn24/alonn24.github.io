@@ -10,7 +10,7 @@ const Education = () => {
       <div className="space-y-8">
         {educationData.timeline.map((edu, index) => (
           <motion.div
-            key={edu.organization}
+            key={`${edu.organization}-${edu.title}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}

@@ -325,7 +325,7 @@ export default function CVDocument({ profileImageUrl }: CVDocumentProps) {
           <View style={styles.profileColRight}>
             <Text style={styles.profileSectionHeading}>Education</Text>
             {educationData.timeline.map((edu) => (
-              <View key={edu.organization}>
+              <View key={`${edu.organization}-${edu.title}`}>
                 <Text style={styles.educationSummaryOrg}>{edu.organization}</Text>
                 <Text style={styles.educationSummaryTitle}>{edu.title}</Text>
                 <Text style={styles.educationSummaryDate}>
