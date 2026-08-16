@@ -20,6 +20,7 @@ export const educationData: { timeline: EducationEntry[] } = {
       title: "NLP (Neuro-Linguistic Programming) Master Practitioner",
       start: "2024",
       end: "2025",
+      credentialUrl: "https://drive.google.com/file/d/1nUx6aXTZilx4QzOkcO_6u9LMyarCnZyR/view",
     },
     {
       organization: "The Open University, Israel",
