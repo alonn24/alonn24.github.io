@@ -1,5 +1,20 @@
-export const educationData = {
+export interface EducationEntry {
+  organization: string
+  title: string
+  start: string
+  end: string
+  credentialUrl?: string
+}
+
+export const educationData: { timeline: EducationEntry[] } = {
   timeline: [
+    {
+      organization: "NeuroLeadership Institute",
+      title: "Brain-Based Conversation Skills",
+      start: "Aug 2026",
+      end: "Aug 2026",
+      credentialUrl: "https://www.credly.com/badges/d0f054e6-049a-4514-a334-5441ba7cb2e9",
+    },
     {
       organization: "Yozmot College",
       title: "NLP (Neuro-Linguistic Programming) Master Practitioner",
@@ -26,4 +41,3 @@ export const educationData = {
     },
   ],
 }
-
