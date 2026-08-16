@@ -21,6 +21,16 @@ const Education = () => {
             <p className="text-gray-400">
               {edu.start === edu.end ? edu.start : `${edu.start} - ${edu.end}`}
             </p>
+            {edu.credentialUrl && (
+              <a
+                href={edu.credentialUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-2 text-red-400 hover:text-red-300 transition-colors"
+              >
+                View credential
+              </a>
+            )}
           </motion.div>
         ))}
       </div>
