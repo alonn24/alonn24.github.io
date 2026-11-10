@@ -1,4 +1,4 @@
-import { FaDev, FaMedium } from "react-icons/fa"
+import { FaDev, FaLinkedin, FaMedium } from "react-icons/fa"
 
 export const publicationsData = [
   {
@@ -33,5 +33,17 @@ export const publicationsData = [
       },
     },
   },
+  {
+    platform: "LinkedIn",
+    url: "https://www.linkedin.com/in/alonn24/",
+    icon: FaLinkedin,
+    description:
+      "With The Client JS API, We Can Report Data To New Relic And Query It With Insights. (IT Central Station, Mar 2016)",
+    author: "Alon Yehezkel",
+    datePublished: "2016-03-01",
+    publisher: {
+      "@type": "Organization",
+      name: "IT Central Station",
+    },
+  },
 ]
-

@@ -262,10 +262,9 @@ export default function CVDocument({ profileImageUrl }: CVDocumentProps) {
         </View>
         <View style={styles.profileBottomHalf}>
           <Text style={styles.title}>Alon Yehezkel</Text>
-          <Text style={styles.subtitle}>Software Engineer</Text>
+          <Text style={styles.subtitle}>Engineering Leader</Text>
           <Text style={styles.profileBody}>
-            A husband, a father and a Software Developer. A Mamram Graduate IDF Captain officer, experienced in the
-            industry including code development, testing, integration and service management within an IT organization.
+            I've been building software for almost 20 years: first as an IDF Mamram officer, then at Wix, Bookaway and Covver. I've worked as a front-end and full-stack engineer, a team lead and an engineering manager. Lately most of my work happens with AI coding agents, and I look for the simplest solution that works. I'm a father of two, trained in NLP and brain-based coaching, and I'm open to senior engineering roles.
           </Text>
           <View style={styles.profileLinksRow}>
             {publicationsData.map((pub, i) => (
@@ -316,7 +315,7 @@ export default function CVDocument({ profileImageUrl }: CVDocumentProps) {
                 <Text style={styles.experienceSummaryCompany}>{company.company}</Text>
                 {company.timeline.map((role) => (
                   <Text key={role.title} style={styles.experienceSummaryRole}>
-                    {role.title} — {role.start} – {role.end}
+                    {role.title}: {role.start} - {role.end}
                   </Text>
                 ))}
               </View>
@@ -329,7 +328,7 @@ export default function CVDocument({ profileImageUrl }: CVDocumentProps) {
                 <Text style={styles.educationSummaryOrg}>{edu.organization}</Text>
                 <Text style={styles.educationSummaryTitle}>{edu.title}</Text>
                 <Text style={styles.educationSummaryDate}>
-                  {edu.start === edu.end ? edu.start : `${edu.start} – ${edu.end}`}
+                  {edu.start === edu.end ? edu.start : `${edu.start} - ${edu.end}`}
                 </Text>
               </View>
             ))}
@@ -345,7 +344,7 @@ export default function CVDocument({ profileImageUrl }: CVDocumentProps) {
             <View style={styles.companyHeader}>
               <Text style={styles.companyName}>{company.company}</Text>
               <Text style={styles.dateRange}>
-                {company.start} – {company.end}
+                {company.start} - {company.end}
               </Text>
               <Text style={[styles.body, { marginBottom: 0 }]}>{company.description}</Text>
             </View>
@@ -353,7 +352,7 @@ export default function CVDocument({ profileImageUrl }: CVDocumentProps) {
               <View key={role.title} style={styles.roleBlock}>
                 <Text style={styles.roleTitle}>{role.title}</Text>
                 <Text style={styles.roleDateRange}>
-                  {role.start} – {role.end}
+                  {role.start} - {role.end}
                 </Text>
                 {role.skills && role.skills.length > 0 && (
                   <View style={{ flexDirection: "row", flexWrap: "wrap", marginBottom: 6 }}>
