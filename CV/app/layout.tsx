@@ -10,10 +10,10 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: {
-    default: "Alon Yehezkel's CV",
+    default: "Alon Yehezkel | Engineering Leader building with AI agents",
     template: "%s | Alon Yehezkel's CV",
   },
-  description: "Resume of an experienced, professional software engineer.",
+  description: "Alon Yehezkel | Engineering Leader building with AI agents",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -21,8 +21,8 @@ export const metadata = {
     ],
   },
   openGraph: {
-    title: "Alon Yehezkel's CV",
-    description: "Resume of an experienced, professional software engineer.",
+    title: "Alon Yehezkel | Engineering Leader building with AI agents",
+    description: "Alon Yehezkel | Engineering Leader building with AI agents",
     url: "https://alonn24.github.io",
     images: [
       {
@@ -34,8 +34,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alon Yehezkel's CV",
-    description: "Resume of an experienced, professional software engineer.",
+    title: "Alon Yehezkel | Engineering Leader building with AI agents",
+    description: "Alon Yehezkel | Engineering Leader building with AI agents",
     images: ["/images/cover.jpg"],
   },
   viewport: {
@@ -62,11 +62,7 @@ export default function RootLayout({
       "https://www.linkedin.com/in/alonn24",
       "https://github.com/alonn24",
     ],
-    jobTitle: "Software Engineer",
-    worksFor: {
-      "@type": "Organization",
-      name: "Snappy",
-    },
+    jobTitle: "Engineering Leader",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://alonn24.github.io",

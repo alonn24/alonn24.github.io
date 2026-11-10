@@ -53,7 +53,7 @@ const Profile = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Software Engineer
+              Engineering Leader
             </motion.h2>
             <motion.p
               className="text-lg mb-6"
@@ -61,10 +61,24 @@ const Profile = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              A husband, a father and a Software Developer. A Mamram Graduate IDF Captain officer, experienced in the
-              industry including code development, testing, integration and service management within an IT
-              organization.
+              I've been building software for almost 20 years: first as an IDF Mamram officer, then at Wix, Bookaway and Covver. I've worked as a front-end and full-stack engineer, a team lead and an engineering manager. Lately most of my work happens with AI coding agents, and I look for the simplest solution that works. I'm a father of two, trained in NLP and brain-based coaching, and I'm open to senior engineering roles.
             </motion.p>
+            <motion.div
+              className="mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <a
+                href="https://www.linkedin.com/in/alonn24/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-red-500 px-6 py-2 text-sm font-semibold text-red-400 transition-colors hover:border-red-400 hover:text-red-300"
+              >
+                <FaLinkedinIn size={16} />
+                View my LinkedIn profile
+              </a>
+            </motion.div>
             <motion.div
               className="flex space-x-4"
               initial={{ opacity: 0, y: 20 }}
