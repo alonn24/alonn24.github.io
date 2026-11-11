@@ -1,11 +1,47 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaEnvelope } from "react-icons/fa"
 
+const PROFILE_SRC = "https://alony-public.s3.eu-west-1.amazonaws.com/hero-profile-1794385060607.png"
+
 const Profile = () => {
-  const [isHovered, setIsHovered] = useState(false)
+  const placeholderRef = useRef<HTMLDivElement>(null)
+  // Pinned/shrinking behavior only applies from the md breakpoint (768px); below it the image stays in the flow.
+  const [pinned, setPinned] = useState(false)
+  const start = useRef({ left: 0, top: 0, size: 256, delay: 400, range: 480 })
+  const { scrollY } = useScroll()
+  // Progress 0..1: nothing happens for the first 50% of a viewport of scroll, then it animates over the next 60%.
+  const progress = useTransform(scrollY, (y) => {
+    const { delay, range } = start.current
+    return Math.min(1, Math.max(0, (y - delay) / range))
+  })
+  const size = useTransform(progress, (p) => start.current.size * (1 - 0.5 * p))
+  const left = useTransform(progress, (p) => start.current.left + (16 - start.current.left) * p)
+  const top = useTransform(progress, (p) => start.current.top + (16 - start.current.top) * p)
+
+  // Measure where the image sits in the hero at scroll 0 (and on resize).
+  useEffect(() => {
+    const measure = () => {
+      const isDesktop = window.matchMedia("(min-width: 768px)").matches
+      setPinned(isDesktop)
+      const el = placeholderRef.current
+      if (!isDesktop || !el) return
+      const r = el.getBoundingClientRect()
+      start.current = {
+        left: r.left,
+        top: r.top + window.scrollY,
+        size: r.width,
+        delay: window.innerHeight * 0.5,
+        range: window.innerHeight * 0.6,
+      }
+      scrollY.set(scrollY.get()) // re-run transforms with new start values
+    }
+    measure()
+    window.addEventListener("resize", measure)
+    return () => window.removeEventListener("resize", measure)
+  }, [scrollY])
   const [videoPlaying, setVideoPlaying] = useState(false)
   const [allowVideo, setAllowVideo] = useState(true)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -50,29 +86,19 @@ const Profile = () => {
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       <div className="container mx-auto px-4 h-full flex items-center relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <motion.div
-            className="relative w-64 h-64 mx-auto md:mx-0"
-            whileHover={{ scale: 1.05 }}
-            onHoverStart={() => setIsHovered(true)}
-            onHoverEnd={() => setIsHovered(false)}
-          >
-            <motion.img
-              src="/profile.png"
-              alt="Alon Yehezkel"
-              className="rounded-full w-full h-full object-cover"
-              animate={isHovered ? { rotate: 360 } : {}}
-              transition={{ duration: 2, ease: "linear" }}
-            />
-            {isHovered && (
-              <motion.div
-                className="absolute inset-0 bg-red-600 bg-opacity-50 rounded-full flex items-center justify-center"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-              >
-                <span className="text-white text-2xl font-bold">Alon Yehezkel</span>
-              </motion.div>
+          <div ref={placeholderRef} className="w-64 h-64 mx-auto md:mx-0">
+            {!pinned && (
+              <img src={PROFILE_SRC} alt="Alon Yehezkel" className="rounded-full w-full h-full object-cover" />
             )}
-          </motion.div>
+          </div>
+          {pinned && (
+            <motion.img
+              src={PROFILE_SRC}
+              alt="Alon Yehezkel"
+              className="fixed z-50 rounded-full object-cover"
+              style={{ left, top, width: size, height: size }}
+            />
+          )}
           <div>
             <motion.h1
               className="text-4xl md:text-6xl font-extrabold mb-4"
