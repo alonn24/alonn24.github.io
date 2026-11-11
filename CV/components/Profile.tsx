@@ -1,17 +1,52 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaEnvelope } from "react-icons/fa"
 
 const Profile = () => {
   const [isHovered, setIsHovered] = useState(false)
+  const [videoPlaying, setVideoPlaying] = useState(false)
+  const [allowVideo, setAllowVideo] = useState(true)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  // Skip the video for reduced-motion and data-saver users; the poster image stays.
+  useEffect(() => {
+    const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || conn?.saveData) {
+      setAllowVideo(false)
+      return
+    }
+    const video = videoRef.current
+    if (!video) return
+    // React does not reliably set the muted attribute, which browsers require for autoplay.
+    video.muted = true
+    video.play().catch(() => {})
+    // Cached video may already be playing before hydration attaches onPlaying.
+    if (!video.paused && video.readyState >= 3) setVideoPlaying(true)
+  }, [])
 
   return (
     <div
       className="relative overflow-hidden bg-cover bg-center h-screen"
       style={{ backgroundImage: "url('/hero.png')" }}
     >
+      {allowVideo && (
+        <video
+          ref={videoRef}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+            videoPlaying ? "opacity-100" : "opacity-0"
+          }`}
+          src="https://alony-public.s3.eu-west-1.amazonaws.com/hero-loop-1794385060607.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          onPlaying={() => setVideoPlaying(true)}
+        />
+      )}
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       <div className="container mx-auto px-4 h-full flex items-center relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
